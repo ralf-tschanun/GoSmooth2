@@ -10,7 +10,7 @@ body {
 /* -------- Header -------- */
 
 header {
-    text-align: center;
+    text-align: left;
     padding: 30px 20px;
 }
 
@@ -23,8 +23,8 @@ header img {
 
 nav {
     background: rgb(8, 8, 50);
-    padding: 15px 0;
-    text-align: center;
+    padding: 15px 20px;
+    text-align: left;
     border-bottom: 2px solid rgba(255,215,0,0.4);
 }
 
@@ -53,7 +53,7 @@ section {
     margin: 40px auto;
     padding: 20px;
     line-height: 1.6;
-    text-align: center;
+    text-align: left;
 }
 
 /* -------- Footer -------- */
@@ -62,7 +62,7 @@ footer {
     margin-top: 50px;
     background: rgb(8, 8, 50);
     padding: 20px;
-    text-align: center;
+    text-align: left;
     font-size: 14px;
 }
 
