@@ -36,25 +36,24 @@ nav a {
     font-weight: normal;
 }
 
-/* active link */
+/* active menu item */
 nav a.active {
     font-weight: bold;
     text-decoration: underline;
 }
 
-/* hover */
 nav a:hover {
     text-decoration: underline;
 }
 
-/* -------- Content Section -------- */
+/* -------- Content -------- */
 
 section {
     max-width: 900px;
     margin: 40px auto;
-    text-align: center;
     padding: 20px;
     line-height: 1.6;
+    text-align: center;
 }
 
 /* -------- Footer -------- */
