@@ -1,0 +1,78 @@
+/* -------- Global -------- */
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background-color: rgb(13, 13, 77);
+    color: rgb(255, 215, 0);
+}
+
+/* -------- Header -------- */
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header img {
+    width: 200px;
+    max-width: 70%;
+}
+
+/* -------- Navigation -------- */
+
+nav {
+    background: rgb(8, 8, 50);
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 2px solid rgba(255,215,0,0.4);
+}
+
+nav a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* active link */
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* hover */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* -------- Content Section -------- */
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* -------- Footer -------- */
+
+footer {
+    margin-top: 50px;
+    background: rgb(8, 8, 50);
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
