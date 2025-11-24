@@ -58,6 +58,19 @@ section {
     text-align: left; /* content text left-aligned */
 }
 
+/* Nur Links im Inhaltsbereich orange machen */
+section a,
+section a:visited {
+    color: rgb(255, 165, 0); /* orange */
+    text-decoration: underline;
+}
+
+section a:hover,
+section a:focus {
+    color: rgb(255, 140, 0); /* etwas dunkleres Orange bei Hover/Focus */
+    text-decoration: underline;
+}
+
 /* -------- Footer -------- */
 
 footer {
