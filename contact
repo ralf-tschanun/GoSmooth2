@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <img src="GoSmoothLogo.jpg" alt="GoSmooth Logo">
+</header>
+
+<nav>
+    <a href="index.html">GoSmooth2</a>
+    <a href="about.html">About Us</a>
+    <a href="manual.html">User Manual</a>
+    <a href="pro.html">Pro Version</a>
+</nav>
+
+<section style="text-align:left; max-width:700px;">
+    <h1>Contact Us</h1>
+
+    <p>If you have questions, feedback, or suggestions, feel free to contact us.</p>
+
+    <form action="mailto:ralf_tschanun@yahoo.com" method="post" enctype="text/plain">
+
+        <label>Your Name:</label><br>
+        <input type="text" name="name" style="width:100%; padding:8px;"><br><br>
+
+        <label>Your Email:</label><br>
+        <input type="email" name="email" style="width:100%; padding:8px;"><br><br>
+
+        <label>Your Message:</label><br>
+        <textarea name="message" rows="6" style="width:100%; padding:8px;"></textarea><br><br>
+
+        <button type="submit" style="padding:10px 20px; font-size:16px;">
+            Send Message
+        </button>
+
+    </form>
+
+    <p style="margin-top:20px; opacity:0.8;">
+        The message will be opened in your email app, where you can send it directly to us.
+    </p>
+</section>
+
+<footer>
+    <a href="imprint.html">Imprint</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="contact.html" class="active">Contact</a>
+</footer>
+
+</body>
+</html>
