@@ -19,20 +19,559 @@
     <a href="pro.html">Pro Version</a>
 </nav>
 
-<section style="text-align:left;">
-    <h1>User Manual</h1>
-    <p>This is where the complete GoSmooth2 User Manual will go.</p>
+<section id="manual">
 
-    <p>Will be published soon!</p>
+    <h1>GoSmooth2 User Manual</h1>
+    <p>
+        GoSmooth2 hilft dir, ein smootherer, sichererer und ökonomischerer Autofahrer zu werden – und dabei trotzdem
+        Spaß zu haben. Dieses Manual erklärt dir Schritt für Schritt, wie die App funktioniert, wie deine Scores
+        berechnet werden und wie du dich verbessern kannst.
+    </p>
 
-    <ul>
-        <li>Installation</li>
-        <li>First steps</li>
-        <li>Understanding your Score</li>
-        <li>AI Evaluation details</li>
-        <li>Privacy and data handling</li>
-        <li>Pro Version features</li>
-    </ul>
+    <!-- Versionen & Features Card -->
+    <div class="manual-card" id="versionen">
+        <h2>Versionen & Features</h2>
+        <p>GoSmooth2 gibt es in drei Ausbaustufen. Einige Funktionen sind nur in bestimmten Versionen sichtbar.</p>
+        <ul>
+            <li>
+                <strong>Free</strong><span class="badge badge-free">Free</span><br>
+                Basis-Funktionen, Trip-Aufzeichnung, Total Score, einfache Score-Übersicht.
+            </li>
+            <li>
+                <strong>Basic</strong><span class="badge badge-basic">Basic</span><br>
+                Alles aus Free <em>plus</em> Steer Chart View und Accel/Brake Chart View.
+            </li>
+            <li>
+                <strong>Pro</strong><span class="badge badge-pro">Pro</span><br>
+                Alles aus Basic <em>plus</em> History in den Settings, Maneuver Details View und
+                grafische Manöver-Details, wenn du Manöver in der Map der Analytics View auswählst.
+            </li>
+        </ul>
+        <p class="hint">
+            Im Manual sind Funktionen mit <span class="badge badge-free">Free</span>,
+            <span class="badge badge-basic">Basic</span> und
+            <span class="badge badge-pro">Pro</span> gekennzeichnet.
+        </p>
+    </div>
+
+    <!-- Einführung Card -->
+    <div class="manual-card" id="intro">
+        <h2>Einführung</h2>
+        <p>
+            GoSmooth2 misst die Fahrzeugbewegungen über GPS und die im iPhone verbauten Bewegungssensoren.
+            KI-Algorithmen erkennen automatisch Manöver und bewerten sie anhand von Komfort, Sicherheit
+            und Energieverbrauch.
+        </p>
+        <p>
+            Kurz gesagt: Je smoother deine Manöver, desto höher dein Score.
+        </p>
+        <p>
+            <a href="#details-einleitung">Mehr zur Funktionsweise und zum Ziel von GoSmooth2</a>
+        </p>
+    </div>
+
+    <!-- Scores Card -->
+    <div class="manual-card" id="scores">
+        <h2>Scores – Überblick</h2>
+        <p>
+            GoSmooth2 berechnet mehrere Arten von Scores, die zusammen deinen <strong>Total Score</strong> pro Trip ergeben.
+        </p>
+        <ul>
+            <li><strong>Maneuver Scores</strong>: Start, Accel, Brake, Stop, Steer</li>
+            <li><strong>Category Scores</strong>: Consistency, Safety, Eco</li>
+            <li><strong>Total Score</strong>: gewichteter Durchschnitt aller Scores des Trips</li>
+        </ul>
+        <p>
+            <a href="#details-scores">Details zu Score-Berechnung und Gewichtungen</a>
+        </p>
+    </div>
+
+    <!-- Maneuver Card -->
+    <div class="manual-card" id="maneuver">
+        <h2>Manöver – Überblick</h2>
+        <p>
+            GoSmooth2 erkennt automatisch verschiedene Manöver und vergibt dafür einzelne Scores
+            zwischen 0 und 10 Punkten. In Basic und Pro kannst du zusätzliche Boost-Punkte erhalten.
+        </p>
+        <ul>
+            <li>🚦 <strong>Start</strong> – Anfahren</li>
+            <li>🚀 <strong>Accel</strong> – Beschleunigen</li>
+            <li>🛑 <strong>Brake</strong> – Bremsen</li>
+            <li>✋ <strong>Stop</strong> – Anhalten bis 0 km/h</li>
+            <li>↩️ <strong>Steer</strong> – Lenken (Links- und Rechtskurven)</li>
+        </ul>
+        <p>
+            <a href="#details-maneuver">Alle Manöver im Detail anzeigen</a>
+        </p>
+    </div>
+
+    <!-- Category Scores Card -->
+    <div class="manual-card" id="categories">
+        <h2>Category Scores</h2>
+        <ul>
+            <li><strong>Consistency</strong> – Wie gleichmäßig du deine Geschwindigkeit hältst</li>
+            <li><strong>Safety</strong> – Wie gut du Tempolimits einhältst und wie wenig du dein Phone bewegst</li>
+            <li><strong>Eco</strong> – Wie energieeffizient dein Fahrverhalten ist</li>
+        </ul>
+        <p>
+            <a href="#details-categories">Details zu Consistency, Safety und Eco</a>
+        </p>
+    </div>
+
+    <!-- Screens Card -->
+    <div class="manual-card" id="screens">
+        <h2>App Screens & Menüs</h2>
+        <ul>
+            <li>
+                <strong>Score</strong> <span class="badge badge-free">Free</span> –
+                Übersicht über deinen Total Score und die Score-Details pro Trip.
+            </li>
+            <li>
+                <strong>History</strong> <span class="badge badge-pro">Pro</span> –
+                Chronologisches Log aller Manöver eines Trips.
+            </li>
+            <li>
+                <strong>Analytics</strong> <span class="badge badge-basic">Basic</span>
+                <span class="badge badge-pro">Pro</span> –
+                Kartenansicht und grafische Auswertung deiner Trips.
+            </li>
+            <li>
+                <strong>Settings</strong> <span class="badge badge-free">Free</span> –
+                Dokumentation und anpassbare Anzeigeoptionen.
+            </li>
+        </ul>
+        <p>
+            <a href="#details-screens">Screen-by-Screen-Beschreibung</a>
+        </p>
+    </div>
+
+    <!-- Fahrstil-Tipps Card -->
+    <div class="manual-card" id="tips">
+        <h2>Fahrstil-Tipps</h2>
+        <p>
+            Bessere Autofahrer fahren smooth: Sie planen voraus, vermeiden ruckartige Manöver,
+            halten ihre Geschwindigkeit möglichst konstant und setzen Gas und Bremse gezielt ein.
+        </p>
+        <p>
+            <a href="#details-tips">Tipps im Detail ansehen</a>
+        </p>
+    </div>
+
+    <!-- Technik Card -->
+    <div class="manual-card" id="tech">
+        <h2>Technische Grundlagen</h2>
+        <p>
+            GoSmooth2 arbeitet mit g-Kräften, Sensorfiltern und KI-Algorithmen, um dein Fahrverhalten zu bewerten.
+            Die Energie- und Score-Berechnungen sind verhaltensbasiert und unabhängig vom Fahrzeugmodell.
+        </p>
+        <p>
+            <a href="#details-technik">Technik-Details und Modelle</a>
+        </p>
+    </div>
+
+    <!-- Glossar Card -->
+    <div class="manual-card" id="glossary">
+        <h2>Glossar</h2>
+        <p>
+            Wichtige Begriffe wie Manöver, Sub-Manöver, g-Kraft, Boost oder Consistency werden hier kurz erklärt.
+        </p>
+        <p>
+            <a href="#details-glossar">Glossar anzeigen</a>
+        </p>
+    </div>
+
+    <!-- ===================== DETAILS ALS AKKORDEON ===================== -->
+
+    <h2 id="details">Details</h2>
+
+    <!-- Einleitung & Überblick -->
+    <details class="manual-accordion" id="details-einleitung">
+        <summary>Einleitung & Überblick</summary>
+        <div class="accordion-content">
+            <h3>Was ist GoSmooth2?</h3>
+            <p>
+                GoSmooth2 misst die Fahrzeugbewegungen über GPS und die im iPhone integrierten Bewegungssensoren.
+                Die App erkennt anhand der gemessenen Beschleunigungen und Rotationen automatisch Manöver
+                (Start, Accel, Brake, Stop, Steer) und bewertet sie. Die eingebauten KI-Algorithmen analysieren
+                Bewegungsprofile und ordnen sie der aktuellen Fahrsituation zu.
+            </p>
+            <p>
+                Jedes erkannte Manöver wird mit einem <strong>Maneuver Score</strong> bewertet, und die verschiedenen
+                Kategorien wie Consistency, Safety und Eco bilden zusammen deinen <strong>Total Score</strong> pro Trip.
+            </p>
+
+            <h3>Warum smoothes Fahren?</h3>
+            <p>
+                „Gute“ Autofahrer sind oft diejenigen, die sicher, komfortabel und ökonomisch unterwegs sind.
+                Zusammengefasst: Ein besserer Autofahrer fährt smooth. Das bedeutet:
+            </p>
+            <ul>
+                <li>vorausschauend fahren</li>
+                <li>ruckartige Manöver vermeiden</li>
+                <li>rechtzeitig vom Gas gehen</li>
+                <li>Bremsen und Reifen nicht unnötig stark belasten</li>
+                <li>sanft in Kurven einlenken, um Lastwechsel zu vermeiden</li>
+                <li>sanft beschleunigen und möglichst konstant fahren</li>
+            </ul>
+            <p>
+                Ein einfacher Indikator ist der Kopf eines Mitfahrers: Je weniger der Kopf „nickt“,
+                desto smoother ist der Trip.
+            </p>
+
+            <h3>Spaß vs. Vernunft</h3>
+            <p>
+                Sehr oft hört man, dass Autofahren Spaß machen soll und dass man Beschleunigungskräfte
+                spüren möchte. Das ist verständlich und völlig okay – wichtig ist der richtige Rahmen.
+            </p>
+            <p>
+                Finde einen Kompromiss zwischen spaßigem und vernünftigem Fahren. Wähle Strecken bewusst aus,
+                auf denen du dynamischer fahren möchtest, und genieße eine zügige Fahrt dort. In vielen
+                Alltagssituationen – Stadt, dichter Verkehr, Urlaubsfahrten – ist es sinnvoller, smooth und
+                entspannt zu fahren. GoSmooth2 unterstützt dich dabei, deinen Fahrstil bewusster und
+                gleichmäßiger zu gestalten.
+            </p>
+
+            <h3>Zielgruppe & Voraussetzungen</h3>
+            <p>
+                GoSmooth2 richtet sich an alle Autofahrerinnen und Autofahrer, die:
+            </p>
+            <ul>
+                <li>ihren Fahrstil bewusster wahrnehmen möchten</li>
+                <li>Sicherheit und Komfort für Mitfahrende erhöhen möchten</li>
+                <li>Energieverbrauch und Verschleiß reduzieren wollen</li>
+                <li>ihre Skills mit Freunden vergleichen möchten – wer ist smoother, nicht wer ist schneller</li>
+            </ul>
+            <p>
+                Voraussetzungen: ein iPhone mit aktueller iOS-Version, GPS-Empfang und die GoSmooth2 App.
+            </p>
+        </div>
+    </details>
+
+    <!-- Beurteilungskriterien & Physik -->
+    <details class="manual-accordion" id="details-bewertung">
+        <summary>Beurteilungskriterien & Fahrphysik</summary>
+        <div class="accordion-content">
+            <h3>Grundprinzip der Bewertung</h3>
+            <p>
+                Die Bewertung der Manöver basiert im Wesentlichen darauf, wie smooth sie ausgeführt werden.
+                Smooth bedeutet, dass auftretende Beschleunigungskräfte möglichst gering und gleichmäßig sind.
+                Hohe und abrupte Kräfte sind unbequem, stressig und meist ineffizient.
+            </p>
+            <p>
+                GoSmooth2 misst die Beschleunigungen und deren Änderungen in alle Richtungen. Daraus lassen
+                sich zwei zentrale Eigenschaften eines Manövers ableiten:
+            </p>
+            <ul>
+                <li><strong>Komfort</strong> – Wie angenehm sind die Bewegungen für Mitfahrende?</li>
+                <li><strong>Ökonomie</strong> – Wie viel Energie wird verbraucht oder vernichtet?</li>
+            </ul>
+
+            <h3>Beschleunigung und Energie</h3>
+            <p>
+                Jede Beschleunigung eines Fahrzeugs benötigt Energie. Beim Bremsen wird Energie
+                überwiegend vernichtet (bei Verbrennerfahrzeugen komplett als Wärme und Verschleiß,
+                bei Elektrofahrzeugen teilweise rekuperiert). GoSmooth2 behandelt Bremsen in der
+                aktuellen Version als Energievernichtung. Eine eigene Elektro-Version folgt.
+            </p>
+            <p>
+                Bessere Autofahrer versuchen:
+            </p>
+            <ul>
+                <li>nur so stark zu beschleunigen, wie nötig</li>
+                <li>Bremsmanöver frühzeitig und gleichmäßig einzuleiten</li>
+                <li>Tempo möglichst konstant zu halten</li>
+            </ul>
+
+            <h3>Gleichmäßigkeit & Sub-Manöver</h3>
+            <p>
+                GoSmooth2 bewertet nicht nur, <em>wie stark</em> du beschleunigst oder bremst,
+                sondern auch, <em>wie gleichmäßig</em> ein Manöver ist. Dazu werden zum Beispiel
+                folgende Kriterien betrachtet:
+            </p>
+            <ul>
+                <li>Anzahl der Sub-Manöver (Unterbrechungen während eines Manövers)</li>
+                <li>Dauer des Manövers</li>
+                <li>Verlauf der g-Kräfte und deren Änderungen</li>
+            </ul>
+            <p>
+                Je weniger Unterbrechungen und je gleichmäßiger der Verlauf, desto höher der Score.
+                Langsame, gut geplante Manöver sind komfortabler, sicherer und energieeffizienter.
+            </p>
+
+            <h3>Lenken & Kurvenfahrt</h3>
+            <p>
+                Beim Lenken wird die Querbeschleunigung gemessen. Smoothes Lenken bedeutet:
+            </p>
+            <ul>
+                <li>Kurven früh und sanft einleiten</li>
+                <li>während der Kurve möglichst konstant lenken</li>
+                <li>wenig Korrekturen am Lenkrad</li>
+                <li>am Kurvenende sanft „auslenken“</li>
+            </ul>
+            <p>
+                Jede unnötige Korrektur erzeugt zusätzliche Bewegungen (Kopfnicken), erhöht den
+                Reifenabrieb und kann die Fahrstabilität verschlechtern. Konstantes Lenken schont
+                Reifen und Umwelt (Feinstaub), erhöht den Komfort und verringert Lastwechsel.
+            </p>
+        </div>
+    </details>
+
+    <!-- Maneuver im Detail -->
+    <details class="manual-accordion" id="details-maneuver">
+        <summary>Manöver im Detail</summary>
+        <div class="accordion-content">
+            <h3>Start Manöver</h3>
+            <p>
+                Das Start Manöver beschreibt das Anfahren aus dem Stand. Bewertet werden:
+            </p>
+            <ul>
+                <li>Anfahrbeschleunigung (Verlauf und maximale Beschleunigung)</li>
+                <li>Gleichmäßigkeit des Beschleunigungsverlaufs</li>
+                <li>Start-Ruck am Beginn des Manövers</li>
+            </ul>
+            <p>
+                Ziel: möglichst sanft anfahren, ohne Ruckler und ohne unnötig hohe g-Kräfte.
+            </p>
+
+            <h3>Beschleunigungs- und Bremsmanöver (Accel/Brake)</h3>
+            <p>
+                Bei Beschleunigungs- und Bremsmanövern werden u. a. berücksichtigt:
+            </p>
+            <ul>
+                <li>Durchschnittliche Anzahl an Beschleunigungsmanövern pro Trip</li>
+                <li>Gleichmäßigkeit des Beschleunigungsverlaufs</li>
+                <li>Maximale g-Kraft</li>
+                <li>Maximale Änderung (wie abrupt die Kräfte wechseln)</li>
+                <li>Anzahl der Sub-Manöver</li>
+                <li>Länge und Dauer des Manövers</li>
+            </ul>
+            <p>
+                Kleine, sanfte Manöver fließen weniger stark in den Score ein als starke Manöver.
+            </p>
+            <p>
+                Praktischer Tipp: Beschleunige nur so stark, dass du nicht direkt danach wieder bremsen musst.
+                Plane voraus, welche Geschwindigkeit wirklich sinnvoll ist, und beschleunige sanft dorthin.
+            </p>
+
+            <h3>Stop Manöver</h3>
+            <p>
+                Stop Manöver enden immer bei 0 km/h. Bewertet werden ähnlich wie beim Bremsen:
+            </p>
+            <ul>
+                <li>Gleichmäßigkeit des Bremsverlaufs</li>
+                <li>Maximale Bremskraft und deren Änderung</li>
+                <li>Anzahl der Sub-Manöver</li>
+                <li>Dauer des Stop-Manövers</li>
+                <li>Stop-Ruck am Ende, wenn das Fahrzeug zum Stillstand kommt</li>
+            </ul>
+            <p>
+                Ein perfektes Stop Manöver ist so ausgeführt, dass der letzte Ruck fast nicht zu spüren ist.
+                Dazu musst du am Ende des Bremsens den Bremsdruck sanft reduzieren.
+            </p>
+
+            <h3>Lenkmanöver (Steer)</h3>
+            <p>
+                Beim Lenken wird die Querbeschleunigung gemessen. Bewertet werden:
+            </p>
+            <ul>
+                <li>Gleichmäßigkeit des Lenkverlaufs</li>
+                <li>Anzahl der Korrekturen (Sub-Manöver)</li>
+                <li>Lenkdauer</li>
+                <li>Höhe der Fliehkräfte</li>
+            </ul>
+            <p>
+                Je länger du eine Kurve gleichmäßig ohne Korrekturen durchfährst, desto höher der Score.
+                Besonders auf Autobahnen lässt sich dies gut beobachten.
+            </p>
+        </div>
+    </details>
+
+    <!-- Category Scores im Detail -->
+    <details class="manual-accordion" id="details-categories">
+        <summary>Category Scores im Detail</summary>
+        <div class="accordion-content">
+            <h3>Consistency</h3>
+            <p>
+                Consistency bewertet, wie konstant du deine Geschwindigkeit hältst. Häufige und starke
+                Geschwindigkeitswechsel senken den Score. Der Consistency Score basiert auf:
+            </p>
+            <ul>
+                <li>Häufigkeit und Stärke der Geschwindigkeitsänderungen</li>
+                <li>Dauer von Phasen mit konstanter Geschwindigkeit</li>
+                <li>Anzahl der Abschnitte mit sehr unregelmäßiger Fahrt</li>
+            </ul>
+
+            <h3>Safety</h3>
+            <p>
+                Der Safety Score berücksichtigt hauptsächlich:
+            </p>
+            <ul>
+                <li>Einhaltung der Geschwindigkeitslimits</li>
+                <li>Häufigkeit und Dauer der Überschreitungen</li>
+                <li>Bewegung des Phones während des Trips (Ablenkung)</li>
+            </ul>
+            <p>
+                Eine leichte Überschreitung von ca. 3 km/h wird toleriert. Je länger und je stärker du
+                das Limit überschreitest, desto schlechter wird der Safety Score. Die Datenbasis der
+                Geschwindigkeitslimits stammt aus einer externen Datenbank und kann von der Realität abweichen.
+                Deshalb fließt der Safety Score nur moderat in den Total Score ein.
+            </p>
+
+            <h3>Eco</h3>
+            <p>
+                Der Eco Score beurteilt deinen energiebezogenen Fahrstil. Es werden vier Hauptbeiträge
+                zur Energiebetrachtung unterschieden:
+            </p>
+            <ul>
+                <li>Rollwiderstand (abhängig von Distanz, kaum durch Fahrstil beeinflussbar)</li>
+                <li>Luftwiderstand (stark abhängig von Geschwindigkeit, besonders bei hohen Geschwindigkeiten)</li>
+                <li>Beschleunigungsenergie (Energie zum Erhöhen der Geschwindigkeit)</li>
+                <li>Bremsenergie (vernichtete Energie beim Verzögern)</li>
+            </ul>
+            <p>
+                GoSmooth2 verwendet ein vereinfachtes physikalisches Modell mit einem angenommenen
+                Fahrzeuggewicht von ca. 1.500 kg und einem Verbrennungsmotor-Wirkungsgrad von etwa 28 %.
+                Die berechneten Werte sind <strong>normalisiert</strong> und dienen zum Vergleich deines
+                Fahrverhaltens – unabhängig vom verwendeten Fahrzeug.
+            </p>
+        </div>
+    </details>
+
+    <!-- Screens & Menüs -->
+    <details class="manual-accordion" id="details-screens">
+        <summary>App Screens & Menüs im Detail</summary>
+        <div class="accordion-content">
+            <h3>Score View <span class="badge badge-free">Free</span></h3>
+            <p>
+                Wähle im Menü <strong>Score</strong>, um deinen Total Score und die Details zu jedem gespeicherten
+                Trip zu sehen. Die Gesamtnote stellt einen auf die jeweilige Trip-Dauer normalisierten
+                Durchschnitt aller Scores dar. Ein Tipp auf einen Trip öffnet die Detailansicht.
+            </p>
+
+            <h3>History <span class="badge badge-pro">Pro</span></h3>
+            <p>
+                In der Pro Version kannst du im Menü <strong>History</strong> ein chronologisches Logbuch aller
+                Manöver eines Trips ansehen. Hier siehst du alle Start-, Accel-, Brake-, Stop- und Steer-Manöver
+                in zeitlicher Reihenfolge vom Trip-Start bis zum Ende.
+            </p>
+
+            <h3>Analytics <span class="badge badge-basic">Basic</span><span class="badge badge-pro">Pro</span></h3>
+            <p>
+                In der Analytics View kannst du deine Trips im Detail analysieren:
+            </p>
+            <ul>
+                <li>Trip-Auswahl und Übersicht über die Category Scores</li>
+                <li>Anzeige der Manöver in der Karte</li>
+                <li>Tippen auf einen Detail Score Circle zeigt die zugehörigen Manöver</li>
+                <li>
+                    In der Pro Version kannst du einzelne Manöver in der Liste oder Karte antippen und
+                    bekommst grafische Details: Beschleunigungsverläufe, Slope, Geschwindigkeit, Boost usw.
+                </li>
+            </ul>
+
+            <h3>Settings <span class="badge badge-free">Free</span></h3>
+            <p>
+                In den Settings findest du eine Kurzdokumentation, kannst einige Anzeigeoptionen konfigurieren
+                (z. B. Zeitfenster für Charts) und erhältst Hinweise zur Nutzung einzelner Funktionen.
+            </p>
+        </div>
+    </details>
+
+    <!-- Fahrstil-Tipps -->
+    <details class="manual-accordion" id="details-tips">
+        <summary>Fahrstil-Tipps für hohe Scores</summary>
+        <div class="accordion-content">
+            <h3>Antizipieren & Planen</h3>
+            <p>
+                Der wichtigste Unterschied zwischen guten und besseren Autofahrern ist die Fähigkeit,
+                Situationen vorauszusehen. Beobachte nicht nur das Auto direkt vor dir, sondern den
+                Verkehr weit voraus. Wenn du früh erkennst, dass du langsamer werden musst, kannst du
+                sanft und gleichmäßig bremsen, statt abrupt reagieren zu müssen.
+            </p>
+
+            <h3>Beschleunigen</h3>
+            <p>
+                Beschleunige nur so stark, wie wirklich nötig, und möglichst gleichmäßig.
+                Überlege dir vorher, welche Zielgeschwindigkeit sinnvoll ist, und beschleunige sanft dorthin,
+                statt ständig hoch und wieder runter zu beschleunigen.
+            </p>
+
+            <h3>Bremsen & Anhalten</h3>
+            <p>
+                Plane Brems- und Stop-Manöver so früh wie möglich. Leite das Bremsen rechtzeitig ein,
+                sodass du mit geringer, konstanter Verzögerung zum Stillstand kommst.
+                Reduziere den Bremsdruck am Ende des Stop-Manövers vorsichtig, um den Stop-Ruckler zu minimieren.
+            </p>
+
+            <h3>Lenken</h3>
+            <p>
+                Leite Kurven früh und sanft ein, halte das Lenkmoment möglichst konstant und vermeide unnötige
+                Korrekturen. Verteile das Lenken über den gesamten Kurvenverlauf und lenke am Ende sanft zurück.
+                So minimierst du Fliehkräfte, Lastwechsel und Reifenabrieb.
+            </p>
+
+            <h3>Konstante Geschwindigkeit</h3>
+            <p>
+                Besonders auf Autobahnen lohnt es sich, die Geschwindigkeit möglichst konstant zu halten.
+                Nutze den Tempomat, wenn es die Situation erlaubt. Jeder unnötige km/h über deiner geplanten
+                Reisegeschwindigkeit kostet überproportional viel Energie, insbesondere bei hohen Geschwindigkeiten.
+            </p>
+        </div>
+    </details>
+
+    <!-- Technik & Sensorik -->
+    <details class="manual-accordion" id="details-technik">
+        <summary>Technik, Sensoren & Modelle</summary>
+        <div class="accordion-content">
+            <h3>Sensoren & g-Kräfte</h3>
+            <p>
+                GoSmooth2 nutzt die im iPhone verbauten Beschleunigungssensoren und Gyroskope. Sie messen
+                Kräfte in Relation zur Erdanziehungskraft (g). Werte unter ca. 0,1 g gelten meist als sanft,
+                Manöver über 0,4 g treten normalerweise nur in Gefahrensituationen oder sehr dynamischer
+                Fahrweise auf.
+            </p>
+
+            <h3>Drift & Filterung</h3>
+            <p>
+                Bei langen Kurven oder Manövern kann es zu Sensordrift kommen. Dadurch sehen manche Verläufe
+                so aus, als ob das Manöver länger andauert, obwohl die Kurve schon zu Ende ist. GoSmooth2
+                kompensiert diese Effekte so gut wie möglich, damit die Scores nicht verfälscht werden.
+            </p>
+
+            <h3>Normalisierte Energiewerte</h3>
+            <p>
+                Damit Scores unabhängig vom Fahrzeugtyp vergleichbar sind, verwendet GoSmooth2 ein
+                vereinfachtes Modell mit:
+            </p>
+            <ul>
+                <li>angenommenem Fahrzeuggewicht (ca. 1.500 kg)</li>
+                <li>typischem Verbrennungsmotor-Wirkungsgrad (~28 %)</li>
+            </ul>
+            <p>
+                Die Eco- und Energiewerte sind daher <strong>verhaltensabhängig normalisiert</strong>.
+                Sie zeigen dir, wie dein Fahrstil die Energieeffizienz beeinflusst, nicht den exakten
+                Verbrauch deines konkreten Fahrzeugs.
+            </p>
+        </div>
+    </details>
+
+    <!-- Glossar -->
+    <details class="manual-accordion" id="details-glossar">
+        <summary>Glossar</summary>
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Trip</strong> – Zusammenhängende Fahrtstrecke vom Start bis zum Stopp.</li>
+                <li><strong>Manöver</strong> – Ein klar abgegrenzter Fahrabschnitt (Start, Accel, Brake, Stop, Steer).</li>
+                <li><strong>Sub-Manöver</strong> – Unterbrechung oder Teilstück eines Manövers, z. B. Korrekturen.</li>
+                <li><strong>g-Kraft</strong> – Beschleunigung relativ zur Erdanziehungskraft (1 g ≈ 9,81 m/s²).</li>
+                <li><strong>Consistency</strong> – Maß für Gleichmäßigkeit deiner Geschwindigkeit.</li>
+                <li><strong>Safety</strong> – Maß für Geschwindigkeits­einhaltung und geringe Ablenkung.</li>
+                <li><strong>Eco</strong> – Maß für den energieeffizienten Einsatz von Gas und Bremse.</li>
+                <li><strong>Boost</strong> – zusätzliche Score-Punkte für besonders gleichmäßige Manöver (Basic/Pro).</li>
+            </ul>
+        </div>
+    </details>
+
 </section>
 
 <footer>
