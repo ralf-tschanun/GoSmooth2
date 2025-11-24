@@ -1,3 +1,106 @@
+/* -------- Global -------- */
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background-color: rgb(13, 13, 77);
+    color: rgb(255, 215, 0);
+}
+
+/* -------- Header -------- */
+
+header {
+    text-align: center; /* keep header centered so logo and header area stay centered */
+    padding: 30px 20px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto; /* center the logo image */
+    width: 200px;
+    max-width: 70%;
+}
+
+/* -------- Navigation -------- */
+
+nav {
+    background: rgb(8, 8, 50);
+    padding: 15px 20px;
+    text-align: center; /* keep navigation centered */
+    border-bottom: 2px solid rgba(255,215,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* active menu item */
+nav a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* -------- Content -------- */
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: left; /* content text left-aligned */
+}
+
+/* Nur Links im Inhaltsbereich orange machen */
+section a,
+section a:visited {
+    color: rgb(255, 165, 0); /* orange */
+    text-decoration: underline;
+}
+
+section a:hover,
+section a:focus {
+    color: rgb(255, 140, 0); /* etwas dunkleres Orange bei Hover/Focus */
+    text-decoration: underline;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* -------- Footer -------- */
+
+footer {
+    margin-top: 50px;
+    background: rgb(8, 8, 50);
+    padding: 20px;
+    text-align: center; /* footer text centered */
+    font-size: 11px;
+}
+
+footer a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 /* -------- Manual Cards & Badges -------- */
 
 #manual h1 {
