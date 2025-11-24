@@ -26,7 +26,7 @@ header img {
 nav {
     background: rgb(8, 8, 50);
     padding: 15px 20px;
-    text-align: left; /* keep navigation links left-aligned */
+    text-align: center; /* keep navigation centered */
     border-bottom: 2px solid rgba(255,215,0,0.4);
 }
 
