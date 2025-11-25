@@ -1,331 +1,4 @@
-/* -------- Global -------- */
-
-body {
-    margin: 0;
-    font-family: Verdana, sans-serif;
-    background-color: rgb(13, 13, 77);
-    color: rgb(255, 215, 0);
-}
-
-/* -------- Header -------- */
-
-header {
-    text-align: center; /* keep header centered so logo and header area stay centered */
-    padding: 30px 20px;
-}
-
-header img {
-    display: block;
-    margin: 0 auto; /* center the logo image */
-    width: 200px;
-    max-width: 70%;
-}
-
-/* -------- Navigation -------- */
-
-nav {
-    background: rgb(8, 8, 50);
-    padding: 15px 20px;
-    text-align: center; /* keep navigation centered */
-    border-bottom: 2px solid rgba(255,215,0,0.4);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav a {
-    color: rgb(255, 215, 0);
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 18px;
-    font-weight: normal;
-}
-
-/* active menu item */
-
-nav a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* -------- Content -------- */
-
-section {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    line-height: 1.6;
-    text-align: left; /* content text left-aligned */
-}
-
-/* Nur Links im Inhaltsbereich orange machen */
-
-section a,
-section a:visited {
-    color: rgb(255, 165, 0); /* orange */
-    text-decoration: underline;
-}
-
-section a:hover,
-section a:focus {
-    color: rgb(255, 140, 0); /* etwas dunkleres Orange bei Hover/Focus */
-    text-decoration: underline;
-}
-
-section img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-}
-
-/* -------- Footer -------- */
-
-footer {
-    margin-top: 50px;
-    background: rgb(8, 8, 50);
-    padding: 20px;
-    text-align: center; /* footer text centered */
-    font-size: 11px;
-}
-
-footer a {
-    color: rgb(255, 215, 0);
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* -------- Manual Cards & Badges -------- */
-
-#manual h1 {
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-.manual-card {
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-}
-
-.manual-card h2 {
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.manual-card ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.manual-card .hint {
-    font-size: 0.9em;
-    opacity: 0.9;
-}
-
-/* Badges für Free/Basic/Pro */
-
-.badge {
-    display: inline-block;
-    font-size: 10px;
-    padding: 2px 6px;
-    margin-left: 6px;
-    border-radius: 999px;
-    border: 1px solid rgba(255, 215, 0, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-}
-
-.badge-free {
-    background: rgba(0, 128, 255, 0.2);
-}
-
-.badge-basic {
-    background: rgba(0, 255, 128, 0.2);
-}
-
-.badge-pro {
-    background: rgba(255, 0, 128, 0.2);
-}
-
-/* -------- Akkordeon -------- */
-
-.manual-accordion {
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    margin: 10px 0 15px 0;
-    padding: 0 16px;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-.manual-accordion summary {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 12px 4px;
-    list-style: none;
-    outline: none;
-}
-
-.manual-accordion summary::-webkit-details-marker {
-    display: none;
-}
-
-.manual-accordion summary::after {
-    content: "▾";
-    float: right;
-    transform: translateY(1px);
-    opacity: 0.8;
-}
-
-.manual-accordion[open] summary::after {
-    content: "▴";
-}
-
-.manual-accordion .accordion-content {
-    padding: 0 4px 12px 4px;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
-    margin-top: 4px;
-}
-
-.manual-accordion h3 {
-    margin-top: 12px;
-}
-
-/* Mobile-Optimierung */
-
-@media (max-width: 600px) {
-    nav a {
-        display: inline-block;
-        margin: 6px 8px;
-        font-size: 16px;
-    }
-
-    section {
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    .manual-card {
-        padding: 16px;
-    }
-}
-
-/* ============================================================
-   MOBILE OPTIMIZATION
-   ============================================================ */
-
-/* Basis: automatische Textskalierung je nach Breite */
-html {
-    font-size: clamp(16px, 1.3vw, 20px);
-}
-
-/* Globale Verbesserungen */
-body {
-    line-height: 1.7;
-    -webkit-text-size-adjust: 100%; /* verhindert iOS-Autovergrößerung */
-}
-
-/* Navigation für mobile */
-@media (max-width: 700px) {
-    nav {
-        padding: 12px 10px;
-    }
-
-    nav a {
-        display: inline-block;
-        font-size: 1rem;
-        margin: 0 10px;
-        padding: 6px 0;
-    }
-}
-
-/* Header: Logo verkleinern auf kleinen Devices */
-@media (max-width: 600px) {
-    header img {
-        width: 140px;
-    }
-}
-
-/* Content Bereich */
-@media (max-width: 768px) {
-    section {
-        padding: 16px;
-        margin: 20px auto;
-    }
-
-    section h1 {
-        font-size: 1.8em;
-        margin-bottom: 0.5em;
-    }
-
-    section h2 {
-        font-size: 1.5em;
-        margin-top: 1em;
-    }
-
-    section p,
-    section li {
-        font-size: 1.05em;
-    }
-}
-
-/* Sehr kleine Smartphones (iPhone SE, 12 mini) */
-@media (max-width: 480px) {
-    body {
-        font-size: 18px;
-    }
-
-    nav a {
-        font-size: 15px;
-        margin: 0 6px;
-    }
-
-    section {
-        padding: 14px;
-    }
-
-    section h1 {
-        font-size: 1.6em;
-    }
-
-    section p,
-    section li {
-        font-size: 1.1em;
-    }
-}
-
-/* Bilder anpassen */
-section img {
-    border-radius: 6px;
-    width: 100%;
-    height: auto;
-}
-
-/* Fußzeile mobil */
-@media (max-width: 600px) {
-    footer {
-        font-size: 0.75rem;
-        padding: 15px;
-    }
-
-    footer a {
-        margin: 0 5px;
-    }
-}
-
-/* ------------------------------
-   Hamburger Navigation (Mobile)
-   ------------------------------ */
+/* -------- Navigation (DESKTOP) -------- */
 
 .navbar {
     background: rgb(8, 8, 50);
@@ -339,18 +12,18 @@ section img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
+    padding: 14px 20px;
 }
 
 /* Logo */
 .nav-logo {
     color: rgb(255,215,0);
     font-size: 22px;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
-/* Menu Items */
+/* Desktop-Menü (sichtbar nur über 768px) */
 .nav-menu {
     list-style: none;
     display: flex;
@@ -370,45 +43,50 @@ section img {
     text-decoration: underline;
 }
 
-/* Hamburger Icon (hidden on desktop) */
+/* Hamburger Icon – Desktop versteckt */
 .nav-hamburger {
+    display: none;
     font-size: 30px;
     color: rgb(255,215,0);
     cursor: pointer;
-    display: none;
 }
 
-/* -------------------------------------------------
-   REFINED MOBILE HAMBURGER MENÜ (CLEAN & COMPACT)
-   ------------------------------------------------- */
+
+/* -------- Mobile Navigation (unter 768px) -------- */
 
 @media (max-width: 768px) {
 
-    /* Schriftgrößen fein justiert */
-    html {
-        font-size: clamp(14px, 1.3vw, 18px);
-    }
-
-    /* Hamburger Icon */
+    /* Hamburger sichtbar */
     .nav-hamburger {
-        font-size: 28px;
-        padding: 5px;
+        display: block;
     }
 
-    /* Menübox */
+    /* Desktop-Menü vollständig ausblenden */
     .nav-menu {
+        display: none;       /* default: hidden */
+        flex-direction: column;
+        width: 100%;
+        background: rgb(8,8,50);
+        margin-top: 10px;
+        border-top: 1px solid rgba(255,215,0,0.3);
         padding: 5px 0;
         gap: 0;
     }
 
-    /* Menü-Einträge kompakter */
+    /* Bei Aktivierung: Menü anzeigen */
+    .nav-menu.show {
+        display: flex;
+    }
+
+    /* Kompakte Menüpunkte */
     .nav-menu li {
-        padding: 6px 0;              /* deutlich enger und schöner */
+        padding: 6px 0;
+        margin: 0;
+        text-align: center;
     }
 
     .nav-menu li a {
-        font-size: 0.95rem;          /* etwas kleiner */
-        text-decoration: none;
-        padding: 4px 0;              /* kompakter */
+        font-size: 0.95rem;
+        padding: 4px 0;
     }
 }
