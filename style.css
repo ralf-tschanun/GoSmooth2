@@ -226,7 +226,7 @@ footer a:hover {
 
 /* Basis: automatische Textskalierung je nach Breite */
 html {
-    font-size: clamp(16px, 1.8vw, 20px);
+    font-size: clamp(16px, 1.4vw, 20px);
 }
 
 /* Globale Verbesserungen */
