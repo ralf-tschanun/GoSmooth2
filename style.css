@@ -219,3 +219,106 @@ footer a:hover {
         padding: 16px;
     }
 }
+
+/* ============================================================
+   MOBILE OPTIMIZATION
+   ============================================================ */
+
+/* Basis: automatische Textskalierung je nach Breite */
+html {
+    font-size: clamp(16px, 1.8vw, 20px);
+}
+
+/* Globale Verbesserungen */
+body {
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%; /* verhindert iOS-Autovergrößerung */
+}
+
+/* Navigation für mobile */
+@media (max-width: 700px) {
+    nav {
+        padding: 12px 10px;
+    }
+
+    nav a {
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0 10px;
+        padding: 6px 0;
+    }
+}
+
+/* Header: Logo verkleinern auf kleinen Devices */
+@media (max-width: 600px) {
+    header img {
+        width: 140px;
+    }
+}
+
+/* Content Bereich */
+@media (max-width: 768px) {
+    section {
+        padding: 16px;
+        margin: 20px auto;
+    }
+
+    section h1 {
+        font-size: 1.8em;
+        margin-bottom: 0.5em;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+
+    section p,
+    section li {
+        font-size: 1.05em;
+    }
+}
+
+/* Sehr kleine Smartphones (iPhone SE, 12 mini) */
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 15px;
+        margin: 0 6px;
+    }
+
+    section {
+        padding: 14px;
+    }
+
+    section h1 {
+        font-size: 1.6em;
+    }
+
+    section p,
+    section li {
+        font-size: 1.1em;
+    }
+}
+
+/* Bilder anpassen */
+section img {
+    border-radius: 6px;
+    width: 100%;
+    height: auto;
+}
+
+/* Fußzeile mobil */
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.75rem;
+        padding: 15px;
+    }
+
+    footer a {
+        margin: 0 5px;
+    }
+}
