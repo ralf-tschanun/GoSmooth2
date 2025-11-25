@@ -13,12 +13,25 @@
     <img src="GoSmoothLogo.jpg" alt="GoSmooth Logo">
 </header>
 
-<nav>
-    <a href="index.html">GoSmooth2</a>
-    <a href="about.html">About Us</a>
-    <a href="manual.html">User Manual</a>
-    <a href="pro.html" class="active">Pro Version</a>
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">GoSmooth2</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="manual.html" class="active">User Manual</a></li>
+            <li><a href="pro.html">Pro Version</a></li>
+        </ul>
+    </div>
 </nav>
+
 
 <section style="text-align:left;">
     <h1>GoSmooth2 Pro Version</h1>
