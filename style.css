@@ -322,3 +322,86 @@ section img {
         margin: 0 5px;
     }
 }
+
+/* ------------------------------
+   Hamburger Navigation (Mobile)
+   ------------------------------ */
+
+.navbar {
+    background: rgb(8, 8, 50);
+    border-bottom: 2px solid rgba(255,215,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+
+/* Logo */
+.nav-logo {
+    color: rgb(255,215,0);
+    font-size: 22px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Menu Items */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li a {
+    color: rgb(255,215,0);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    text-decoration: underline;
+}
+
+/* Hamburger Icon (hidden on desktop) */
+.nav-hamburger {
+    font-size: 30px;
+    color: rgb(255,215,0);
+    cursor: pointer;
+    display: none;
+}
+
+/* -------- Mobile Layout -------- */
+
+@media (max-width: 768px) {
+
+    .nav-hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none; /* hidden until hamburger is tapped */
+        flex-direction: column;
+        width: 100%;
+        background: rgb(8,8,50);
+        margin-top: 10px;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255,215,0,0.3);
+    }
+
+    .nav-menu li {
+        padding: 14px 0;
+        text-align: center;
+    }
+
+    .nav-menu.show {
+        display: flex;   /* show when toggled */
+    }
+}
