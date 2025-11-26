@@ -101,7 +101,7 @@ header img {
 
 @media (max-width: 768px) {
 
-    .nav-container {
+    .nav-hamburger {
         position: relative;
     }
 
