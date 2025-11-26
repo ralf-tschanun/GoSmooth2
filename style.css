@@ -95,48 +95,64 @@ header img {
     cursor: pointer;
 }
 
-/* ------------ MOBILE ------------ */
-
-/* ----- Overlay-Hamburger-Menü (schiebt NICHT mehr die Seite nach unten) ----- */
+/* ------------ MOBILE (Overlay Hamburger Menü) ------------ */
 
 @media (max-width: 768px) {
 
-    .nav-hamburger {
+    /* Container wird Bezugspunkt für das Overlay-Menü */
+    .nav-container {
         position: relative;
     }
 
+    /* Hamburger sichtbar und korrekt positioniert */
+    .nav-hamburger {
+        display: block;
+        position: relative;
+        font-size: 30px;
+        color: rgb(255,215,0);
+        cursor: pointer;
+        padding: 5px;
+        z-index: 3000; /* damit der Button über dem Menü bleibt */
+    }
+
+    /* Desktop-Menu unsichtbar machen */
     .nav-menu {
         display: none;
-        position: absolute;
-        top: 100%; /* direkt unter der Navbar */
+        position: absolute;     /* Menü schwebt über der Page */
+        top: 100%;              /* direkt unterhalb der Navbar */
         left: 0;
         width: 100%;
         background: rgb(8, 8, 50);
         padding: 10px 0;
         border-bottom: 2px solid rgba(255,215,0,0.4);
-
-        /* Menü über der Webseite platzieren */
-        z-index: 2000;
-
-        /* Optional: Shadow für professionellen Look */
         box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        z-index: 2000;          /* über dem Content, unter dem Burger */
+        flex-direction: column;
     }
 
+    /* Wenn sichtbar */
     .nav-menu.show {
         display: flex;
-        flex-direction: column;
-        gap: 0;
     }
 
+    /* Mobile Menüeinträge */
     .nav-menu li {
         text-align: center;
         padding: 10px 0;
+        margin: 0;
     }
 
     .nav-menu li a {
         font-size: 1rem;
         padding: 6px 0;
         display: block;
+        color: rgb(255,215,0);
+        text-decoration: none;
+    }
+
+    .nav-menu li a:hover,
+    .nav-menu li a.active {
+        text-decoration: underline;
     }
 }
 
