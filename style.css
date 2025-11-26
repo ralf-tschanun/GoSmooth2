@@ -95,57 +95,71 @@ header img {
     cursor: pointer;
 }
 
-/* ------------ MOBILE (Overlay Hamburger Menü) ------------ */
+/* ===============================================
+   MOBILE MENU — SLIDE DOWN + RIGHT SIDEBAR STYLE
+   =============================================== */
 
 @media (max-width: 768px) {
 
-    /* Container wird Bezugspunkt für das Overlay-Menü */
     .nav-container {
         position: relative;
     }
 
-    /* Hamburger sichtbar und korrekt positioniert */
+    /* Hamburger sichtbar */
     .nav-hamburger {
         display: block;
-        position: relative;
-        font-size: 30px;
-        color: rgb(255,215,0);
-        cursor: pointer;
+        font-size: 32px;
         padding: 5px;
-        z-index: 3000; /* damit der Button über dem Menü bleibt */
+        z-index: 3000;
     }
 
-    /* Desktop-Menu unsichtbar machen */
+    /* Menü (Overlay, rechtsbündig, schmal) */
     .nav-menu {
         display: none;
-        position: absolute;     /* Menü schwebt über der Page */
-        top: 100%;              /* direkt unterhalb der Navbar */
-        left: 0;
-        width: 100%;
+        position: absolute;
+        top: 100%;
+        right: 0; /* Rechts ausrichten */
+        width: auto;
+        min-width: 200px;
+        max-width: 260px;
+
         background: rgb(8, 8, 50);
         padding: 10px 0;
-        border-bottom: 2px solid rgba(255,215,0,0.4);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        z-index: 2000;          /* über dem Content, unter dem Burger */
-        flex-direction: column;
+        border: 1px solid rgba(255,215,0,0.3);
+        border-radius: 10px 0 10px 10px; /* Rechts oben eckig, Rest rund */
+
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+        z-index: 2000;
+
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
     }
 
-    /* Wenn sichtbar */
+    /* Sichtbarer Zustand mit Animation */
     .nav-menu.show {
         display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
 
-    /* Mobile Menüeinträge */
+    /* Menüeinträge kompakt & rechtsbündig */
     .nav-menu li {
-        text-align: center;
-        padding: 10px 0;
-        margin: 0;
+        padding: 10px 18px;
+        text-align: right;  /* rechtsbündig */
     }
 
     .nav-menu li a {
-        font-size: 1rem;
-        padding: 6px 0;
         display: block;
+        font-size: 1rem;
+        padding: 5px 0;
         color: rgb(255,215,0);
         text-decoration: none;
     }
@@ -153,8 +167,10 @@ header img {
     .nav-menu li a:hover,
     .nav-menu li a.active {
         text-decoration: underline;
+        opacity: 0.9;
     }
 }
+
 
 /* ============================================================
    CONTENT AREA
