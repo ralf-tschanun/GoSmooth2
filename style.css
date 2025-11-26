@@ -1,4 +1,48 @@
-/* -------- Navigation (DESKTOP) -------- */
+/* ============================================================
+   GLOBAL
+   ============================================================ */
+
+body {
+    margin: 0;
+    font-family: Verdana, sans-serif;
+    background-color: rgb(13, 13, 77);
+    color: rgb(255, 215, 0);
+    line-height: 1.7;
+    -webkit-text-size-adjust: 100%;
+}
+
+html {
+    font-size: clamp(14px, 1.4vw, 18px);
+}
+
+/* Images in content */
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    max-width: 70%;
+}
+
+/* ============================================================
+   NAVIGATION — Desktop & Mobile (Hamburger)
+   ============================================================ */
 
 .navbar {
     background: rgb(8, 8, 50);
@@ -12,10 +56,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px;
+    padding: 15px 20px;
 }
 
-/* Logo */
+/* LOGO */
 .nav-logo {
     color: rgb(255,215,0);
     font-size: 22px;
@@ -23,7 +67,7 @@
     text-decoration: none;
 }
 
-/* Desktop-Menü (sichtbar nur über 768px) */
+/* DESKTOP MENU */
 .nav-menu {
     list-style: none;
     display: flex;
@@ -43,7 +87,7 @@
     text-decoration: underline;
 }
 
-/* Hamburger Icon – Desktop versteckt */
+/* HAMBURGER — hidden on desktop */
 .nav-hamburger {
     display: none;
     font-size: 30px;
@@ -51,42 +95,185 @@
     cursor: pointer;
 }
 
-
-/* -------- Mobile Navigation (unter 768px) -------- */
+/* ------------ MOBILE ------------ */
 
 @media (max-width: 768px) {
 
-    /* Hamburger sichtbar */
     .nav-hamburger {
         display: block;
     }
 
-    /* Desktop-Menü vollständig ausblenden */
+    /* Desktop-Menü verstecken */
     .nav-menu {
-        display: none;       /* default: hidden */
+        display: none;
         flex-direction: column;
         width: 100%;
         background: rgb(8,8,50);
-        margin-top: 10px;
         border-top: 1px solid rgba(255,215,0,0.3);
-        padding: 5px 0;
+        margin-top: 10px;
+        padding: 8px 0;
         gap: 0;
     }
 
-    /* Bei Aktivierung: Menü anzeigen */
     .nav-menu.show {
         display: flex;
     }
 
-    /* Kompakte Menüpunkte */
     .nav-menu li {
+        text-align: center;
         padding: 6px 0;
         margin: 0;
-        text-align: center;
     }
 
     .nav-menu li a {
-        font-size: 0.95rem;
+        font-size: 1rem;
         padding: 4px 0;
+        display: block;
+    }
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+/* Orange Links im Content */
+section a,
+section a:visited {
+    color: rgb(255, 165, 0);
+    text-decoration: underline;
+}
+
+section a:hover {
+    color: rgb(255, 140, 0);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+    margin-top: 50px;
+    background: rgb(8, 8, 50);
+    padding: 20px;
+    text-align: center;
+    font-size: 11px;
+}
+
+footer a {
+    color: rgb(255, 215, 0);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   MANUAL CARDS
+   ============================================================ */
+
+.manual-card {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.manual-card h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.manual-card .hint {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 6px;
+    margin-left: 6px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 215, 0, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.badge-free { background: rgba(0, 128, 255, 0.2); }
+.badge-basic { background: rgba(0, 255, 128, 0.2); }
+.badge-pro { background: rgba(255, 0, 128, 0.2); }
+
+/* ============================================================
+   ACCORDION
+   ============================================================ */
+
+.manual-accordion {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    margin: 10px 0 15px 0;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.manual-accordion summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 12px 4px;
+    list-style: none;
+}
+
+.manual-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.manual-accordion summary::after {
+    content: "▾";
+    float: right;
+    opacity: 0.8;
+}
+
+.manual-accordion[open] summary::after {
+    content: "▴";
+}
+
+.manual-accordion .accordion-content {
+    padding: 10px 0 12px 0;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* ============================================================
+   MOBILE CONTENT OPTIMIZATION
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 16px;
+        margin: 20px auto;
+    }
+
+    header img {
+        width: 140px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px;
+    }
+
+    footer a {
+        margin: 0 5px;
     }
 }
