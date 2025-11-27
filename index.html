@@ -136,6 +136,26 @@ const translations = {
 };
 </script>
 
+<script>
+function setLanguage(lang) {
+    localStorage.setItem("lang", lang);
+    applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
+
+// Beim Laden automatisch anwenden:
+const savedLang = localStorage.getItem("lang") || "de";
+applyLanguage(savedLang);
+</script>
+
     
 </body>
 </html>
