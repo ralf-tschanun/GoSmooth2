@@ -232,7 +232,7 @@ footer a:hover {
 .manual-accordion summary svg {
     width: 1em;
     height: 1em;
-    stroke: currentColor;
+     stroke: rgb(255,165,0);  /* ORANGE – korrekt */
     stroke-width: 2.2;
     vertical-align: middle;
     margin-right: 0.35em;
