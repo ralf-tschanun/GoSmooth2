@@ -222,11 +222,12 @@ footer a:hover {
    ============================================================ */
 
 .manual-card {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(25, 25, 100, 0.25);
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 215, 0, 0.2);
 }
 
 .manual-card h2 {
