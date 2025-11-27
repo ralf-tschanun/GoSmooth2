@@ -202,6 +202,7 @@ section a:hover {
 footer {
     margin-top: 50px;
     background: rgb(10, 10, 63);
+   border-top: 2px solid rgba(255,215,0,0.4);
     padding: 20px;
     text-align: center;
     font-size: 11px;
