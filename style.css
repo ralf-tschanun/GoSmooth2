@@ -241,13 +241,18 @@ footer a:hover {
     gap: 10px;
 }
 
-.manual-title svg {
-    width: 1em;      /* Iconhöhe = Texthöhe */
-    height: 1em;     /* Iconhöhe = Texthöhe */
+.manual-title svg,
+.manual-accordion summary svg {
+    width: 22px;                 /* Einheitliche Icon-Größe */
+    height: 22px;
     stroke: rgb(255,165,0);
+    stroke-width: 2.2;
+    vertical-align: middle;      /* perfekte Text-Ausrichtung */
+    margin-right: 8px;           /* Abstand zum Text */
     flex-shrink: 0;
-    display: inline-block;   /* verhindert Block-Breite */
+    display: inline-block;
 }
+
 
 .manual-card {
     background: rgba(0, 0, 0, 0.1);
@@ -289,28 +294,37 @@ footer a:hover {
    ============================================================ */
 
 .manual-accordion {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 18px;
-    margin: 10px 0 15px 0;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 14px;
+    margin: 12px 0;
     padding: 0 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+
+    overflow: hidden; /* verhindert springende Inhalte */
 }
 
+/* Summary Titel */
 .manual-accordion summary {
     cursor: pointer;
     font-weight: bold;
-    padding: 12px 4px;
+    padding: 14px 4px;
     list-style: none;
+    display: flex;
+    align-items: center;      /* sorgt für optimale Icon/Text-Ausrichtung */
+    gap: 8px;
 }
 
+/* Toggle-Pfeil ausschalten, wir nutzen nur deine Icons */
 .manual-accordion summary::-webkit-details-marker {
     display: none;
 }
 
+/* Chevron (▾ / ▴) rechts ergänzen */
 .manual-accordion summary::after {
     content: "▾";
-    float: right;
+    margin-left: auto;
     opacity: 0.8;
 }
 
@@ -318,9 +332,11 @@ footer a:hover {
     content: "▴";
 }
 
+/* Inhalt */
 .manual-accordion .accordion-content {
-    padding: 10px 0 12px 0;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 0 4px 14px 4px;
+    border-top: 1px solid rgba(255, 215, 0, 0.25);
+    margin-top: 8px;
 }
 
 /* ============================================================
