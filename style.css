@@ -378,3 +378,16 @@ footer a:hover {
         opacity: 0.2;
     }
 }
+
+.lang-switch button {
+    background: none;
+    border: none;
+    color: rgb(255,215,0);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.lang-switch button:hover {
+    text-decoration: underline;
+}
