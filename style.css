@@ -235,6 +235,19 @@ footer a:hover {
 /* ============================================================
    MANUAL CARDS
    ============================================================ */
+.manual-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.manual-title svg {
+    width: 1em;      /* Iconhöhe = Texthöhe */
+    height: 1em;     /* Iconhöhe = Texthöhe */
+    stroke: rgb(255,165,0);
+    flex-shrink: 0;
+    display: inline-block;   /* verhindert Block-Breite */
+}
 
 .manual-card {
     background: rgba(0, 0, 0, 0.1);
