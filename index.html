@@ -11,6 +11,36 @@
 function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
 }
+
+function spawnCar() {
+    const car = document.createElement("div");
+    car.className = "car";
+    car.textContent = "🚗";
+
+    const field = document.getElementById("car-field");
+
+    // zufällige Höhe
+    car.style.top = Math.random() * 100 + "vh";
+
+    // zufällige Größe
+    const size = 24 + Math.random() * 24;
+    car.style.fontSize = size + "px";
+
+    // zufällige Geschwindigkeit
+    const speed = 8 + Math.random() * 6; // 8–14s
+    car.style.animationDuration = speed + "s";
+
+    field.appendChild(car);
+
+    // Auto nach Animation wieder löschen
+    setTimeout(() => {
+        car.remove();
+    }, speed * 1000);
+}
+
+// Alle 1–3 Sekunden ein Auto spawnen
+setInterval(spawnCar, 2000);
+
 </script>
 
 <body>
