@@ -11,7 +11,7 @@ body {
     color: rgb(178, 155, 45);
     line-height: 1.6;
    letter-spacing: 0.1px;
-   max-width: 65ch;
+   max-width: 120ch;
    padding: 0 1.2rem
     -webkit-text-size-adjust: 100%;
 }
