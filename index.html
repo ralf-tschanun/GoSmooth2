@@ -12,35 +12,36 @@ function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
 }
 
-function spawnCar() {
-    const car = document.createElement("div");
-    car.className = "car";
-    car.textContent = "🚗";
+function spawnSnow() {
+    const flake = document.createElement("div");
+    flake.className = "snowflake";
+    flake.textContent = "❄";
 
-    const field = document.getElementById("car-field");
+    const field = document.getElementById("snow-field");
 
-    // zufällige Höhe
-    car.style.top = Math.random() * 100 + "vh";
+    // zufällige horizontale Startposition
+    flake.style.left = Math.random() * 100 + "vw";
 
     // zufällige Größe
-    const size = 24 + Math.random() * 24;
-    car.style.fontSize = size + "px";
+    const size = 10 + Math.random() * 14;
+    flake.style.fontSize = size + "px";
 
-    // zufällige Geschwindigkeit
-    const speed = 8 + Math.random() * 6; // 8–14s
-    car.style.animationDuration = speed + "s";
+    // unterschiedliche Dauer
+    const duration = 6 + Math.random() * 8;
+    flake.style.animationDuration = duration + "s";
 
-    field.appendChild(car);
+    // zufällige leichte seitliche Drift
+    const drift = (Math.random() - 0.5) * 60; // -30 bis +30px
+    flake.style.setProperty('--drift', drift + 'px');
 
-    // Auto nach Animation wieder löschen
-    setTimeout(() => {
-        car.remove();
-    }, speed * 1000);
+    field.appendChild(flake);
+
+    // entfernen sobald Schneeflocke unten ist
+    setTimeout(() => flake.remove(), duration * 1000);
 }
 
-// Alle 1–3 Sekunden ein Auto spawnen
-setInterval(spawnCar, 2000);
-
+// 5–10 Schneeflocken pro Sekunde
+setInterval(spawnSnow, 150);
 </script>
 
 <body>
