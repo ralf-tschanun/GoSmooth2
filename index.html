@@ -27,7 +27,7 @@ function spawnSnow() {
     flake.style.fontSize = size + "px";
 
     // opacity der flakes
-    flake.style.opacity = 0.4;
+    flake.style.opacity = 0.1;
     
     // unterschiedliche Dauer
     const duration = 6 + Math.random() * 8;
@@ -44,7 +44,7 @@ function spawnSnow() {
 }
 
 // 5–10 Schneeflocken pro Sekunde
-setInterval(spawnSnow, 10);
+setInterval(spawnSnow, 1000);
 </script>
 
 <body>
