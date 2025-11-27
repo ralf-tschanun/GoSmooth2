@@ -15,7 +15,7 @@ body {
     color: rgb(178, 155, 45);
     line-height: 1.6;
     letter-spacing: 0.1px;
-
+padding: 0;
     -webkit-text-size-adjust: 100%;
 }
 
