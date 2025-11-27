@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: Verdana, sans-serif;
     background-color: rgb(13, 13, 77);
-    color: rgb(145, 125, 38);
+    color: rgb(178, 155, 45);
     line-height: 1.7;
     -webkit-text-size-adjust: 100%;
 }
@@ -223,7 +223,7 @@ footer a:hover {
 
 .manual-card {
     background: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
+    border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
