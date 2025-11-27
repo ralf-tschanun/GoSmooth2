@@ -75,7 +75,7 @@ setInterval(spawnSnow, 1000);
 
 
 <section>
-    <h2>Welcome to GoSmooth2</h2>
+    <h2 data-i18n="solution.title"></h2>
     
     <!-- Full-bleed image: good-driver-discounts (zwischen Überschrift und "Are you a good driver?") -->
     <img
@@ -85,8 +85,7 @@ setInterval(spawnSnow, 1000);
         style="opacity:0.5;"
     >
 
-    <p><strong>Are you a good driver?</strong><br>
-    Of course you are! But let’s find out together.</p>
+    <p data-i18n="solution.AreYou"><strong></strong><br data-i18n="solution.OfCourse"></p>
 
     <p>
     Let GoSmooth use your iPhone to measure how good you really are.<br>
@@ -121,6 +120,22 @@ setInterval(spawnSnow, 1000);
 </footer>
 
 <!-- <div id="snow-field"></div> -->
+    
+<script>
+const translations = {
+    de: {
+        "solution.title": "Wilkommen bei GoSmooth",
+        "solution.AreYou": "Kannst Du gut autofahren?",
+        "solution.OfCourse": "Natürlich! Lass es uns gemeinsam herausfinden.",
+    },
+    en: {
+        "solution.title": "Welcome to GoSmooth",
+        "solution.AreYou": "Are you a good driver?",
+        "solution.OfCourse": "Of course you are! But let’s find out together.",
+    }
+};
+</script>
 
+    
 </body>
 </html>
