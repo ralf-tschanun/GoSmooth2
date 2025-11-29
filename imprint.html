@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
@@ -17,40 +17,58 @@ function toggleMenu() {
 
 <nav class="navbar">
     <div class="nav-container">
+
         <a href="index.html" class="nav-logo">GoSmooth2</a>
 
-        <!-- Hamburger Button -->
-        <div class="nav-hamburger" onclick="toggleMenu()">
-            &#9776;
+        <!-- Language Switch -->
+        <div class="lang-switch-small">
+            <a href="imprint_de.html">DE</a> |
+            <a href="imprint.html" class="active-lang">EN</a>
         </div>
 
-        <!-- Menu Items -->
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+
         <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Solution</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="manual.html">User Manual</a></li>
+            <li><a href="manual.html">Manual</a></li>
             <li><a href="pro.html">Pro</a></li>
         </ul>
     </div>
 </nav>
 
-
-<section style="text-align:left;">
+<section style="text-align:left; max-width:700px;">
     <h1>Imprint</h1>
-    <p>GoSmooth Team.
-         <p>
-    <p>This site is for Testing purposes only.
-    <p>It's operated by Sina Tschanun and Team
+
+    <p>This website is operated for testing and demonstration purposes only.</p>
+
+    <h2>Responsible for Content</h2>
     <p>
-    Alszeile 88/4/2<br>
-    A-1170 Vienna.
+        GoSmooth Team<br>
+        Sina Tschanun<br>
+        Alszeile 88/4/2<br>
+        A-1170 Vienna<br>
+        Austria
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+        For inquiries, please use our contact form:<br>
+        <a href="contact.html">Contact GoSmooth</a>
+    </p>
+
+    <h2>Disclaimer</h2>
+    <p>
+        This website and the GoSmooth app are provided as-is.  
+        All information is without guarantee.  
+        No liability is assumed for third-party content or external links.
     </p>
 </section>
 
 <footer>
     <a href="imprint.html" class="active">Imprint</a> |
     <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html">Contact</a>    
+    <a href="contact.html">Contact</a>
 </footer>
 
 </body>
