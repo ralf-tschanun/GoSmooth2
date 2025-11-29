@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Impressum – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="index_de.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Language Switch -->
+        <div class="lang-switch-small">
+            <a href="imprint_de.html" class="active-lang">DE</a> |
+            <a href="imprint.html">EN</a>
+        </div>
+
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index_de.html">Lösung</a></li>
+            <li><a href="about_de.html">Über uns</a></li>
+            <li><a href="manual_de.html">Handbuch</a></li>
+            <li><a href="pro_de.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section style="text-align:left; max-width:700px;">
+    <h1>Impressum</h1>
+
+    <p>Diese Website wird ausschließlich zu Test- und Demonstrationszwecken betrieben.</p>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>
+        GoSmooth Team<br>
+        Sina Tschanun<br>
+        Alszeile 88/4/2<br>
+        A-1170 Wien<br>
+        Österreich
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+        Für Anfragen verwende bitte unser Kontaktformular:<br>
+        <a href="contact_de.html">GoSmooth kontaktieren</a>
+    </p>
+
+    <h2>Haftungsausschluss</h2>
+    <p>
+        Diese Website und die GoSmooth-App werden ohne Gewähr bereitgestellt.  
+        Alle Angaben erfolgen ohne Anspruch auf Vollständigkeit oder Richtigkeit.  
+        Für Inhalte externer Websites kann keine Haftung übernommen werden.
+    </p>
+</section>
+
+<footer>
+    <a href="imprint_de.html" class="active">Impressum</a> |
+    <a href="privacy_de.html">Datenschutz</a> |
+    <a href="contact_de.html">Kontakt</a>
+</footer>
+
+</body>
+</html>
