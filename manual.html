@@ -15,18 +15,15 @@ function toggleMenu() {
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    // Alle internen Links mit Hash überwachen
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener("click", function (e) {
             const id = this.getAttribute("href").substring(1);
             const target = document.getElementById(id);
 
-            // Wenn das Ziel ein <details> Element ist → öffnen
             if (target && target.tagName.toLowerCase() === "details") {
                 target.setAttribute("open", "open");
             }
 
-            // kurze Verzögerung, damit das Accordion geöffnet ist, bevor gescrollt wird
             setTimeout(() => {
                 const element = document.getElementById(id);
                 if (element) {
@@ -42,34 +39,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <nav class="navbar">
     <div class="nav-container">
-        <a href="index.html" class="nav-logo">GoSmooth2</a>
-
-        <!-- Language switch -->
-        <div class="lang-switch-small">
-            <a href="index_de.html">DE</a> |
-            <a href="index.html" class="active-lang">EN</a>
-        </div>
+        <a href="index_en.html" class="nav-logo">GoSmooth2</a>
 
         <!-- Hamburger Button -->
-        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
 
         <!-- Menu Items -->
         <ul class="nav-menu" id="nav-menu">
-            <li><a href="index.html">Solution</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="manual.html" class="active">Manual</a></li>
-            <li><a href="pro.html">Pro</a></li>
+            <li><a href="index_en.html">Solution</a></li>
+            <li><a href="about_en.html">About</a></li>
+            <li><a href="manual_en.html" class="active">Manual</a></li>
+            <li><a href="pro_en.html">Pro</a></li>
         </ul>
     </div>
 </nav>
+
 
 <section id="manual">
 
     <h1>GoSmooth2 User Manual</h1>
     <p>
-        GoSmooth2 hilft dir, ein smootherer, sichererer und ökonomischerer Autofahrer zu werden – und dabei trotzdem
-        Spaß zu haben. Dieses Manual erklärt dir Schritt für Schritt, wie die App funktioniert, wie deine Scores
-        berechnet werden und wie du dich verbessern kannst.
+        GoSmooth2 helps you become a smoother, safer, and more economical driver — while still having fun.
+        This manual explains step by step how the app works, how your scores are calculated, and how you can improve.
     </p>
 
     <!-- Versionen & Features Card -->
@@ -79,52 +72,52 @@ document.addEventListener("DOMContentLoaded", () => {
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19 12a7 7 0 0 0-.2-1.6l2-1.3-1.2-2.1-2.3.7a7 7 0 0 0-2-2L16 3h-2l-.6 2.7a7 7 0 0 0-2.8 0L10 3H8l.7 2.7a7 7 0 0 0-2 2l-2.3-.7-1.2 2.1 2 1.3A7 7 0 0 0 5 12c0 .6.1 1.1.2 1.6l-2 1.3 1.2 2.1 2.3-.7a7 7 0 0 0 2 2L8 21h2l.6-2.7a7 7 0 0 0 2.8 0L14 21h2l-.7-2.7a7 7 0 0 0 2-2l2.3.7 1.2-2.1-2-1.3A7 7 0 0 0 19 12z"/>
             </svg>
-        Versionen & Features
+        Versions & Features
         </h2>
 
-        <p>GoSmooth2 gibt es in drei Ausbaustufen. Einige Funktionen sind nur in bestimmten Versionen sichtbar.</p>
+        <p>GoSmooth2 is available in three versions. Some functions are only visible in the higher tiers.</p>
         <ul>
             <li>
                 <strong>Free</strong><span class="badge badge-free">Free</span><br>
-                Basis-Funktionen, Trip-Aufzeichnung, Total Score, einfache Score-Übersicht.
+                Basic functionality, trip recording, Total Score, simple score overview.
             </li>
             <li>
                 <strong>Basic</strong><span class="badge badge-basic">Basic</span><br>
-                Alles aus Free <em>plus</em> Steer Chart View und Accel/Brake Chart View.
+                Everything from Free <em>plus</em> Steer Chart View and Accel/Brake Chart View.
             </li>
             <li>
                 <strong>Pro</strong><span class="badge badge-pro">Pro</span><br>
-                Alles aus Basic <em>plus</em> History in den Settings, Maneuver Details View und
-                grafische Manöver-Details, wenn du Manöver in der Map der Analytics View auswählst.
+                Everything from Basic <em>plus</em> History in Settings, Maneuver Details View, and detailed
+                maneuver graphics when selecting maneuvers in the map of the Analytics View.
             </li>
         </ul>
         <p class="hint">
-            Im Manual sind Funktionen mit <span class="badge badge-free">Free</span>,
-            <span class="badge badge-basic">Basic</span> und
-            <span class="badge badge-pro">Pro</span> gekennzeichnet.
+            In the manual, features are tagged with <span class="badge badge-free">Free</span>,
+            <span class="badge badge-basic">Basic</span> and
+            <span class="badge badge-pro">Pro</span>.
         </p>
     </div>
 
-    <!-- Einführung Card -->
+    <!-- Introduction Card -->
     <div class="manual-card" id="intro">
         <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 20V4M20 20V4"></path>
             <path d="M4 8h16M4 12h16M4 16h16"></path>
             </svg>
-        Einführung
+        Introduction
         </h2>
         
         <p>
-            GoSmooth2 misst die Fahrzeugbewegungen über GPS und die im iPhone verbauten Bewegungssensoren.
-            KI-Algorithmen erkennen automatisch Manöver und bewerten sie anhand von Komfort, Sicherheit
-            und Energieverbrauch.
+            GoSmooth2 analyzes vehicle motion using GPS and the motion sensors built into your iPhone.
+            AI algorithms automatically detect maneuvers and evaluate them based on comfort, safety,
+            and energy usage.
         </p>
         <p>
-            Kurz gesagt: Je smoother deine Manöver, desto höher dein Score.
+            Simply put: The smoother your maneuvers, the higher your score.
         </p>
         <p>
-            <a href="#details-einleitung">Mehr zur Funktionsweise und zum Ziel von GoSmooth2</a>
+            <a href="#details-einleitung">More about how GoSmooth2 works</a>
         </p>
     </div>
 
@@ -139,15 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
         Scores
         </h2>
         <p>
-            GoSmooth2 berechnet mehrere Arten von Scores, die zusammen deinen <strong>Total Score</strong> pro Trip ergeben.
+            GoSmooth2 calculates several types of scores that together form your <strong>Total Score</strong> for each trip.
         </p>
         <ul>
             <li><strong>Maneuver Scores</strong>: Start, Accel, Brake, Stop, Steer</li>
             <li><strong>Category Scores</strong>: Consistency, Safety, Eco</li>
-            <li><strong>Total Score</strong>: gewichteter Durchschnitt aller Scores des Trips</li>
+            <li><strong>Total Score</strong>: Weighted average of all trip scores</li>
         </ul>
         <p>
-            <a href="#details-scores">Details zu Score-Berechnung und Gewichtungen</a>
+            <a href="#details-scores">More about score calculation</a>
         </p>
     </div>
 
@@ -159,21 +152,21 @@ document.addEventListener("DOMContentLoaded", () => {
             <path d="M12 12l5-2"></path>
             <path d="M12 4v3"></path>
             </svg>
-        Manöver
+        Maneuvers
         </h2>
         <p>
-            GoSmooth2 erkennt automatisch verschiedene Manöver und vergibt dafür einzelne Scores
-            zwischen 0 und 10 Punkten. In Basic und Pro kannst du zusätzliche Boost-Punkte erhalten.
+            GoSmooth2 automatically detects different maneuvers and assigns individual scores
+            between 0 and 10. In Basic and Pro, you can receive additional Boost points.
         </p>
         <ul>
-            <li>🏁 <strong>Start</strong> – Anfahren</li>
-            <li>👟 <strong>Accel</strong> – Beschleunigen</li>
-            <li>🦶 <strong>Brake</strong> – Bremsen</li>
-            <li>⛔️ <strong>Stop</strong> – Anhalten bis 0 km/h</li>
-            <li>⭕️ <strong>Steer</strong> – Lenken (Links- und Rechtskurven)</li>
+            <li>🏁 <strong>Start</strong> – Starting from standstill</li>
+            <li>👟 <strong>Accel</strong> – Accelerating</li>
+            <li>🦶 <strong>Brake</strong> – Braking</li>
+            <li>⛔️ <strong>Stop</strong> – Stopping to 0 km/h</li>
+            <li>⭕️ <strong>Steer</strong> – Steering (left and right turns)</li>
         </ul>
         <p>
-            <a href="#details-maneuver">Alle Manöver im Detail anzeigen</a>
+            <a href="#details-maneuver">View all maneuver details</a>
         </p>
     </div>
 
@@ -186,12 +179,12 @@ document.addEventListener("DOMContentLoaded", () => {
         Category Scores
         </h2>
         <ul>
-            <li><strong>Consistency</strong> – Wie gleichmäßig du deine Geschwindigkeit hältst</li>
-            <li><strong>Safety</strong> – Wie gut du Tempolimits einhältst und wie wenig du dein Phone bewegst</li>
-            <li><strong>Eco</strong> – Wie energieeffizient dein Fahrverhalten ist</li>
+            <li><strong>Consistency</strong> – How evenly you maintain your speed</li>
+            <li><strong>Safety</strong> – How well you obey speed limits & keep your phone steady</li>
+            <li><strong>Eco</strong> – How energy-efficient your driving style is</li>
         </ul>
         <p>
-            <a href="#details-categories">Details zu Consistency, Safety und Eco</a>
+            <a href="#details-categories">More about Consistency, Safety, Eco</a>
         </p>
     </div>
 
@@ -203,71 +196,71 @@ document.addEventListener("DOMContentLoaded", () => {
             <line x1="10" y1="5" x2="10" y2="19"></line>
             <line x1="16" y1="5" x2="16" y2="19"></line>
             </svg>
-        Screens & Menüs
+        Screens & Menus
         </h2>
         <ul>
             <li>
                 <strong>Score</strong> <span class="badge badge-free">Free</span> –
-                Übersicht über deinen Total Score und die Score-Details pro Trip.
+                Overview of your Total Score and trip score details.
             </li>
             <li>
                 <strong>History</strong> <span class="badge badge-pro">Pro</span> –
-                Chronologisches Log aller Manöver eines Trips.
+                Chronological log of all maneuvers in a trip.
             </li>
             <li>
                 <strong>Analytics</strong> <span class="badge badge-basic">Basic</span>
                 <span class="badge badge-pro">Pro</span> –
-                Kartenansicht und grafische Auswertung deiner Trips.
+                Map view and graphical evaluation of trips.
             </li>
             <li>
                 <strong>Settings</strong> <span class="badge badge-free">Free</span> –
-                Dokumentation und anpassbare Anzeigeoptionen.
+                Documentation and customizable display options.
             </li>
         </ul>
         <p>
-            <a href="#details-screens">Screen-by-Screen-Beschreibung</a>
+            <a href="#details-screens">Screen-by-screen description</a>
         </p>
     </div>
 
-    <!-- Fahrstil-Tipps Card -->
+    <!-- Driving Tips -->
     <div class="manual-card" id="tips">
         <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 18c4-6 12-6 16 0"></path>
             <path d="M4 6c4 6 12 6 16 0"></path>
             </svg>
-        Fahrstil-Tipps
+        Driving Tips
         </h2>
 
         <p>
-            Bessere Autofahrer fahren smooth: Sie planen voraus, vermeiden ruckartige Manöver,
-            halten ihre Geschwindigkeit möglichst konstant und setzen Gas und Bremse gezielt ein.
+            Better drivers drive smoothly: they plan ahead, avoid abrupt maneuvers,
+            keep speed consistent, and use throttle and brake deliberately.
         </p>
         <p>
-            <a href="#details-tips">Tipps im Detail ansehen</a>
+            <a href="#details-tips">Show detailed driving tips</a>
         </p>
     </div>
 
-    <!-- Technik Card -->
+    <!-- Technology -->
     <div class="manual-card" id="tech">
         <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="8" y="8" width="8" height="8" rx="1"></rect>
             <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
             </svg>
-        Technische Grundlagen
+        Technical Basics
         </h2>
 
         <p>
-            GoSmooth2 arbeitet mit g-Kräften, Sensorfiltern und KI-Algorithmen, um dein Fahrverhalten zu bewerten.
-            Die Energie- und Score-Berechnungen sind verhaltensbasiert und unabhängig vom Fahrzeugmodell.
+            GoSmooth2 uses g-forces, sensor filtering, and AI models to evaluate your driving behavior.
+            Energy and score calculations are based on behavior, independent of car model.
         </p>
         <p>
-            <a href="#details-technik">Technik-Details und Modelle</a>
+            <a href="#details-technik">Technical details & models</a>
         </p>
     </div>
 
-    <!-- Glossar Card -->
+    <!-- Glossary -->
     <div class="manual-card" id="glossary">
         <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -275,89 +268,88 @@ document.addEventListener("DOMContentLoaded", () => {
             <line x1="4" y1="12" x2="16" y2="12"></line>
             <circle cx="18" cy="7" r="2"></circle>
             </svg>
-        Glossar
+        Glossary
         </h2>
         <p>
-            Wichtige Begriffe wie Manöver, Sub-Manöver, g-Kraft, Boost oder Consistency werden hier kurz erklärt.
+            Important terms such as Maneuver, Sub-maneuver, g-force, Boost, or Consistency are briefly explained here.
         </p>
         <p>
-            <a href="#details-glossar">Glossar anzeigen</a>
+            <a href="#details-glossar">Show glossary</a>
         </p>
     </div>
 
-    <!-- ===================== DETAILS ALS AKKORDEON ===================== -->
+    <!-- ===================== DETAILS AS ACCORDION ===================== -->
 
     <h2 id="details">Details</h2>
 
-    <!-- Einleitung & Überblick -->
+    <!-- Introduction -->
     <details class="manual-accordion" id="details-einleitung">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 20V4M20 20V4"></path>
             <path d="M4 8h16M4 12h16M4 16h16"></path>
             </svg>
-        Einführung</summary>
+        Introduction</summary>
         <div class="accordion-content">
-            <h3>Was ist GoSmooth2?</h3>
+            <h3>What is GoSmooth2?</h3>
             <p>
-                GoSmooth2 misst die Fahrzeugbewegungen über GPS und die im iPhone integrierten Bewegungssensoren.
-                Die App erkennt anhand der gemessenen Beschleunigungen und Rotationen automatisch Manöver
-                (Start, Accel, Brake, Stop, Steer) und bewertet sie. Die eingebauten KI-Algorithmen analysieren
-                Bewegungsprofile und ordnen sie der aktuellen Fahrsituation zu.
+                GoSmooth2 analyzes vehicle motion using GPS and the built-in motion sensors of your iPhone.
+                The app detects maneuvers (Start, Accel, Brake, Stop, Steer) based on measured accelerations
+                and rotations and evaluates them. AI models determine the driving situation and classify each maneuver.
             </p>
             <p>
-                Jedes erkannte Manöver wird mit einem <strong>Maneuver Score</strong> bewertet, und die verschiedenen
-                Kategorien wie Consistency, Safety und Eco bilden zusammen deinen <strong>Total Score</strong> pro Trip.
+                Each maneuver receives a <strong>Maneuver Score</strong>, and the categories Consistency, Safety,
+                and Eco together form your <strong>Total Score</strong> for each trip.
             </p>
 
-            <h3>Warum smoothes Fahren?</h3>
+            <h3>Why smooth driving?</h3>
             <p>
-                „Gute“ Autofahrer sind ja bekanntlich alle;-) Bessere Autofahrer sind diejenigen, die sicher, komfortabel und ökonomisch unterwegs sind.
-                Zusammengefasst: Ein besserer Autofahrer fährt SMOOTH. Das bedeutet:
+                Everyone thinks they're a “good” driver ;-)  
+                Better drivers are those who drive safely, comfortably, and economically.
+                In short: A better driver drives SMOOTH.
             </p>
             <ul>
-                <li>vorausschauend fahren</li>
-                <li>ruckartige Manöver vermeiden</li>
-                <li>rechtzeitig vom Gas gehen</li>
-                <li>Bremsen und Reifen nicht unnötig stark belasten</li>
-                <li>sanft in Kurven einlenken, um Lastwechsel zu vermeiden</li>
-                <li>sanft beschleunigen und möglichst konstant fahren</li>
+                <li>drive anticipatively</li>
+                <li>avoid abrupt maneuvers</li>
+                <li>lift off the throttle early</li>
+                <li>avoid unnecessary brake and tire wear</li>
+                <li>steer smoothly to avoid load changes</li>
+                <li>accelerate gradually & keep speed constant</li>
             </ul>
             <p>
-                Ein einfacher Indikator ist der Kopf eines Mitfahrers: Je weniger der Kopf „nickt“,
-                desto smoother ist der Trip.
+                A simple indicator is the head of a passenger:  
+                The less it “nods”, the smoother the trip.
             </p>
 
-            <h3>Spaß vs. Vernunft</h3>
+            <h3>Fun vs. reason</h3>
             <p>
-                Sehr oft hört man, dass Autofahren Spaß machen soll und dass man Beschleunigungskräfte
-                spüren möchte. Das ist verständlich und völlig okay – wichtig ist der richtige Rahmen.
+                Driving should be fun — and feeling acceleration forces is part of that.  
+                That’s perfectly fine as long as it fits the situation.
             </p>
             <p>
-                Finde einen Kompromiss zwischen spaßigem und vernünftigem Fahren. Wähle Strecken bewusst aus,
-                auf denen du dynamischer fahren möchtest, und genieße eine zügige Fahrt dort. In vielen
-                Alltagssituationen – Stadt, dichter Verkehr, Urlaubsfahrten – ist es sinnvoller, smooth und
-                entspannt zu fahren. GoSmooth2 unterstützt dich dabei, deinen Fahrstil bewusster und
-                gleichmäßiger zu gestalten.
+                Find a balance between fun and responsible driving.  
+                Save dynamic driving for the right places.  
+                In everyday situations, smooth driving is safer and more relaxed.  
+                GoSmooth2 helps you become more consistent and aware of your driving style.
             </p>
 
-            <h3>Zielgruppe & Voraussetzungen</h3>
+            <h3>Target audience & requirements</h3>
             <p>
-                GoSmooth2 richtet sich an alle Autofahrerinnen und Autofahrer, die:
+                GoSmooth2 is designed for drivers who:
             </p>
             <ul>
-                <li>ihren Fahrstil bewusster wahrnehmen möchten</li>
-                <li>Sicherheit und Komfort für Mitfahrende erhöhen möchten</li>
-                <li>Energieverbrauch und Verschleiß reduzieren wollen</li>
-                <li>ihre Skills mit Freunden vergleichen möchten – wer ist smoother, nicht wer ist schneller</li>
+                <li>want to better understand their driving style</li>
+                <li>want to improve comfort & safety for passengers</li>
+                <li>want to reduce energy usage and wear</li>
+                <li>want to compare skills with friends — smoother, not faster</li>
             </ul>
             <p>
-                Voraussetzungen: ein iPhone mit aktueller iOS-Version, GPS-Empfang und die GoSmooth2 App.
+                Requirements: an iPhone with current iOS, GPS reception, and the GoSmooth2 app.
             </p>
         </div>
     </details>
 
-    <!-- Beurteilungskriterien & Physik -->
+    <!-- Scores & Physics -->
     <details class="manual-accordion" id="details-scores">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -365,357 +357,329 @@ document.addEventListener("DOMContentLoaded", () => {
             <line x1="12" y1="12" x2="15" y2="15"></line>
             <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
-        Scores & Fahrphysik</summary>
+        Scores & Driving Physics</summary>
         <div class="accordion-content">
-            <h3>Grundprinzip der Bewertung</h3>
+            <h3>Basic scoring principles</h3>
             <p>
-                Die Bewertung der Manöver basiert im Wesentlichen darauf, wie smooth sie ausgeführt werden.
-                Smooth bedeutet, dass auftretende Beschleunigungskräfte möglichst gering und gleichmäßig sind.
-                Hohe und abrupte Kräfte sind unbequem, stressig und meist ineffizient.
+                Scoring is mainly based on how smooth your maneuvers are.
+                Smooth means that acceleration forces are as low and consistent as possible.
+                High or abrupt forces are uncomfortable, stressful, and inefficient.
             </p>
             <p>
-                GoSmooth2 misst die Beschleunigungen und deren Änderungen in alle Richtungen. Daraus lassen
-                sich zwei zentrale Eigenschaften eines Manövers ableiten:
+                GoSmooth2 measures accelerations and their changes in all directions.  
+                Two key characteristics are derived:
             </p>
             <ul>
-                <li><strong>Komfort</strong> – Wie angenehm sind die Bewegungen für Mitfahrende?</li>
-                <li><strong>Ökonomie</strong> – Wie viel Energie wird verbraucht oder vernichtet?</li>
+                <li><strong>Comfort</strong> – How pleasant the motion is for passengers</li>
+                <li><strong>Economy</strong> – How much energy is consumed or wasted</li>
             </ul>
 
-            <h3>Beschleunigung und Energie</h3>
+            <h3>Acceleration & energy</h3>
             <p>
-                Jede Beschleunigung eines Fahrzeugs benötigt Energie. Beim Bremsen wird Energie
-                überwiegend vernichtet (bei Verbrennerfahrzeugen komplett als Wärme und Verschleiß,
-                bei Elektrofahrzeugen teilweise rekuperiert). GoSmooth2 behandelt Bremsen in der
-                aktuellen Version als Energievernichtung. Eine eigene Elektro-Version folgt.
+                Every acceleration requires energy. Braking mostly destroys energy  
+                (in combustion cars as heat; in EVs partially recuperated).  
+                GoSmooth2 currently treats braking as energy loss.  
+                A dedicated EV version will follow.
             </p>
-            <p>
-                Bessere Autofahrer versuchen:
-            </p>
+            <p>Better drivers aim to:</p>
             <ul>
-                <li>nur so stark zu beschleunigen, wie nötig</li>
-                <li>Bremsmanöver frühzeitig und gleichmäßig einzuleiten</li>
-                <li>Tempo möglichst konstant zu halten</li>
+                <li>accelerate only as much as needed</li>
+            <li>start braking early & smoothly</li>
+            <li>keep speed as constant as possible</li>
             </ul>
 
-            <h3>Gleichmäßigkeit & Sub-Manöver</h3>
+            <h3>Consistency & sub-maneuvers</h3>
             <p>
-                GoSmooth2 bewertet nicht nur, <em>wie stark</em> du beschleunigst oder bremst,
-                sondern auch, <em>wie gleichmäßig</em> ein Manöver ist. Dazu werden zum Beispiel
-                folgende Kriterien betrachtet:
+                GoSmooth2 evaluates not only <em>how strongly</em> you accelerate or brake,
+                but also <em>how consistently</em> you perform maneuvers:
             </p>
             <ul>
-                <li>Anzahl der Sub-Manöver (Unterbrechungen während eines Manövers)</li>
-                <li>Dauer des Manövers</li>
-                <li>Verlauf der g-Kräfte und deren Änderungen</li>
+                <li>number of sub-maneuvers (interruptions)</li>
+                <li>duration of the maneuver</li>
+                <li>pattern of g-forces and their change</li>
             </ul>
             <p>
-                Je weniger Unterbrechungen und je gleichmäßiger der Verlauf, desto höher der Score.
-                Langsame, gut geplante Manöver sind komfortabler, sicherer und energieeffizienter.
+                Fewer interruptions and smoother progression = higher score.
             </p>
 
-            <h3>Lenken & Kurvenfahrt</h3>
+            <h3>Steering & cornering</h3>
             <p>
-                Beim Lenken wird die Querbeschleunigung gemessen. Smoothes Lenken bedeutet:
+                Steering is evaluated based on lateral acceleration.  
+                Smooth steering means:
             </p>
             <ul>
-                <li>Kurven früh und sanft einleiten</li>
-                <li>während der Kurve möglichst konstant lenken</li>
-                <li>wenig Korrekturen am Lenkrad</li>
-                <li>am Kurvenende sanft „auslenken“</li>
+                <li>enter turns early and gently</li>
+                <li>keep a constant steering angle</li>
+                <li>minimize corrections</li>
+                <li>exit smoothly</li>
             </ul>
             <p>
-                Jede unnötige Korrektur erzeugt zusätzliche Bewegungen (Kopfnicken), erhöht den
-                Reifenabrieb und kann die Fahrstabilität verschlechtern. Konstantes Lenken schont
-                Reifen und Umwelt (Feinstaub), erhöht den Komfort und verringert Lastwechsel.
+                Unnecessary corrections increase forces, tire wear, and reduce stability.
             </p>
         </div>
     </details>
 
-    <!-- Maneuver im Detail -->
+    <!-- Maneuvers Detail -->
     <details class="manual-accordion" id="details-maneuver">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="8"></circle>
-            <path d="M12 12l5-2"></path>
-            <path d="M12 4v3"></path>
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 12l5-2"></path>
+                <path d="M12 4v3"></path>
             </svg>
-        Manöver im Detail</summary>
+        Maneuvers in Detail</summary>
         <div class="accordion-content">
-            <h3>🏁 Start Manöver</h3>
-            <p>
-                Das Start Manöver beschreibt das Anfahren aus dem Stand. Bewertet werden:
-            </p>
+
+            <h3>🏁 Start Maneuver</h3>
+            <p>The start maneuver describes moving from standstill. Evaluated factors:</p>
             <ul>
-                <li>Anfahrbeschleunigung (Verlauf und maximale Beschleunigung)</li>
-                <li>Gleichmäßigkeit des Beschleunigungsverlaufs</li>
-                <li>Start-Ruck am Beginn des Manövers</li>
+                <li>acceleration pattern (max force & shape)</li>
+                <li>consistency over time</li>
+                <li>start jerk at the beginning</li>
+            </ul>
+            <p>Goal: accelerate gently, no jerks, low g-forces.</p>
+
+            <h3>👟 Accel & 🦶 Brake</h3>
+            <p>Evaluated factors include:</p>
+            <ul>
+                <li>number of acceleration events per trip</li>
+                <li>consistency of the acceleration pattern</li>
+                <li>max g-force</li>
+                <li>rate of change</li>
+                <li>number of sub-maneuvers</li>
+                <li>length & duration</li>
             </ul>
             <p>
-                Ziel: möglichst sanft anfahren, ohne Ruckler und ohne unnötig hohe g-Kräfte.
+                Small, gentle maneuvers contribute less to negative scoring.
+            </p>
+            <p>
+                Tip: accelerate only as much as needed so you don’t have to brake immediately afterward.
             </p>
 
-            <h3>👟 Beschleunigungs- und 🦶 Bremsmanöver (Accel/Brake)</h3>
+            <h3>⛔️ Stop Maneuver</h3>
             <p>
-                Bei Beschleunigungs- und Bremsmanövern werden u. a. berücksichtigt:
+                Stop maneuvers always end at 0 km/h. Evaluated similar to braking:
             </p>
             <ul>
-                <li>Durchschnittliche Anzahl an Beschleunigungsmanövern pro Trip</li>
-                <li>Gleichmäßigkeit des Beschleunigungsverlaufs</li>
-                <li>Maximale g-Kraft</li>
-                <li>Maximale Änderung (wie abrupt die Kräfte wechseln)</li>
-                <li>Anzahl der Sub-Manöver</li>
-                <li>Länge und Dauer des Manövers</li>
+                <li>smoothness of the deceleration curve</li>
+                <li>max deceleration & rate of change</li>
+                <li>sub-maneuvers</li>
+                <li>duration</li>
+                <li>final stop jerk</li>
             </ul>
             <p>
-                Kleine, sanfte Manöver fließen weniger stark in den Score ein als starke Manöver.
-            </p>
-            <p>
-                Praktischer Tipp: Beschleunige nur so stark, dass du nicht direkt danach wieder bremsen musst.
-                Plane voraus, welche Geschwindigkeit wirklich sinnvoll ist, und beschleunige sanft dorthin.
+                Ideal stop: reduce brake pressure at the end to almost eliminate the final jerk.
             </p>
 
-            <h3>⛔️ Stop Manöver</h3>
-            <p>
-                Stop Manöver enden immer bei 0 km/h. Bewertet werden ähnlich wie beim Bremsen:
-            </p>
+            <h3>⭕️ Steering</h3>
+            <p>Steering evaluation includes:</p>
             <ul>
-                <li>Gleichmäßigkeit des Bremsverlaufs</li>
-                <li>Maximale Bremskraft und deren Änderung</li>
-                <li>Anzahl der Sub-Manöver</li>
-                <li>Dauer des Stop-Manövers</li>
-                <li>Stop-Ruck am Ende, wenn das Fahrzeug zum Stillstand kommt</li>
+                <li>smoothness of steering angle</li>
+                <li>corrective movements</li>
+                <li>duration</li>
+                <li>lateral forces</li>
             </ul>
             <p>
-                Ein perfektes Stop Manöver ist so ausgeführt, dass der letzte Ruck fast nicht zu spüren ist.
-                Dazu musst du am Ende des Bremsens den Bremsdruck sanft reduzieren.
-            </p>
-
-            <h3>⭕️ Lenkmanöver (Steer)</h3>
-            <p>
-                Beim Lenken wird die Querbeschleunigung gemessen. Bewertet werden:
-            </p>
-            <ul>
-                <li>Gleichmäßigkeit des Lenkverlaufs</li>
-                <li>Anzahl der Korrekturen (Sub-Manöver)</li>
-                <li>Lenkdauer</li>
-                <li>Höhe der Fliehkräfte</li>
-            </ul>
-            <p>
-                Je länger du eine Kurve gleichmäßig ohne Korrekturen durchfährst, desto höher der Score.
-                Besonders auf Autobahnen lässt sich dies gut beobachten.
+                The smoother & longer you hold a constant steering angle, the higher the score.
             </p>
         </div>
     </details>
 
-    <!-- Category Scores im Detail -->
+    <!-- Category Scores -->
     <details class="manual-accordion" id="details-categories">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
+                <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
             </svg>
-        Category Scores im Detail</summary>
+        Category Scores in Detail</summary>
+
         <div class="accordion-content">
+
             <h3>📐 Consistency</h3>
             <p>
-                Consistency bewertet, wie konstant du deine Geschwindigkeit hältst. Häufige und starke
-                Geschwindigkeitswechsel senken den Score. Der Consistency Score basiert auf:
+                Consistency evaluates how evenly you maintain speed.
             </p>
             <ul>
-                <li>Häufigkeit und Stärke der Geschwindigkeitsänderungen</li>
-                <li>Dauer von Phasen mit konstanter Geschwindigkeit</li>
-                <li>Anzahl der Abschnitte mit sehr unregelmäßiger Fahrt</li>
+                <li>frequency & strength of speed changes</li>
+                <li>duration of constant-speed phases</li>
+                <li>sections of irregular driving</li>
             </ul>
 
             <h3>💯 Safety</h3>
-            <p>
-                Der Safety Score berücksichtigt hauptsächlich:
-            </p>
             <ul>
-                <li>Einhaltung der Geschwindigkeitslimits</li>
-                <li>Häufigkeit und Dauer der Überschreitungen</li>
-                <li>Bewegung des Phones während des Trips (Ablenkung)</li>
+                <li>speed limit adherence</li>
+                <li>duration of exceedance</li>
+                <li>phone movement (distraction)</li>
             </ul>
             <p>
-                Eine leichte Überschreitung von ca. 3 km/h wird toleriert. Je länger und je stärker du
-                das Limit überschreitest, desto schlechter wird der Safety Score. Die Datenbasis der
-                Geschwindigkeitslimits stammt aus einer externen Datenbank und kann von der Realität abweichen.
-                Deshalb fließt der Safety Score nur moderat in den Total Score ein.
+                A slight overshoot (about 3 km/h) is tolerated.  
+                Longer or stronger exceedance lowers the score.
+            </p>
+            <p>
+                Speed limit data may not always match reality, so the Safety Score has moderate weight.
             </p>
 
             <h3>🌱 Eco</h3>
             <p>
-                Der Eco Score beurteilt deinen energiebezogenen Fahrstil. Es werden vier Hauptbeiträge
-                zur Energiebetrachtung unterschieden:
+                Eco evaluates the energy-efficiency of your driving:
             </p>
             <ul>
-                <li>Rollwiderstand (abhängig von Distanz, kaum durch Fahrstil beeinflussbar)</li>
-                <li>Luftwiderstand (stark abhängig von Geschwindigkeit, besonders bei hohen Geschwindigkeiten)</li>
-                <li>Beschleunigungsenergie (Energie zum Erhöhen der Geschwindigkeit)</li>
-                <li>Bremsenergie (vernichtete Energie beim Verzögern)</li>
+                <li>rolling resistance (mostly distance-based)</li>
+                <li>aerodynamic drag (high-speed dependent)</li>
+                <li>acceleration energy</li>
+                <li>braking energy (lost energy)</li>
             </ul>
             <p>
-                GoSmooth2 verwendet ein vereinfachtes physikalisches Modell mit einem angenommenen
-                Fahrzeuggewicht von ca. 1.500 kg und einem Verbrennungsmotor-Wirkungsgrad von etwa 28 %.
-                Die berechneten Werte sind <strong>normalisiert</strong> und dienen zum Vergleich deines
-                Fahrverhaltens – unabhängig vom verwendeten Fahrzeug.
+                GoSmooth2 uses a simplified physics model (1,500 kg, 28% efficiency)  
+                to allow fair comparisons independent of your car.
             </p>
         </div>
     </details>
 
-    <!-- Screens & Menüs -->
+    <!-- Screens -->
     <details class="manual-accordion" id="details-screens">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <line x1="10" y1="5" x2="10" y2="19"></line>
-            <line x1="16" y1="5" x2="16" y2="19"></line>
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <line x1="10" y1="5" x2="10" y2="19"></line>
+                <line x1="16" y1="5" x2="16" y2="19"></line>
             </svg>
-        Screens & Menüs</summary>
+        Screens & Menus</summary>
+
         <div class="accordion-content">
+
             <h3>Score View <span class="badge badge-free">Free</span></h3>
             <p>
-                Wähle im Menü <strong>Score</strong>, um deinen Total Score und die Details zu jedem gespeicherten
-                Trip zu sehen. Die Gesamtnote stellt einen auf die jeweilige Trip-Dauer normalisierten
-                Durchschnitt aller Scores dar. Ein Tipp auf einen Trip öffnet die Detailansicht.
+                Shows your Total Score and detailed trip results.  
+                Tapping a trip opens detailed view.
             </p>
 
             <h3>History <span class="badge badge-pro">Pro</span></h3>
             <p>
-                In der Pro Version kannst du im Menü <strong>History</strong> ein chronologisches Logbuch aller
-                Manöver eines Trips ansehen. Hier siehst du alle Start-, Accel-, Brake-, Stop- und Steer-Manöver
-                in zeitlicher Reihenfolge vom Trip-Start bis zum Ende.
+                Chronological list of all maneuvers in a trip.
             </p>
 
             <h3>Analytics <span class="badge badge-basic">Basic</span><span class="badge badge-pro">Pro</span></h3>
             <p>
-                In der Analytics View kannst du deine Trips im Detail analysieren:
+                Detailed trip analysis:
             </p>
             <ul>
-                <li>Trip-Auswahl und Übersicht über die Category Scores</li>
-                <li>Anzeige der Manöver in der Karte</li>
-                <li>Tippen auf einen Detail Score Circle zeigt die zugehörigen Manöver</li>
+                <li>trip selection & category scores</li>
+                <li>maneuver map</li>
+                <li>tap score circles for associated maneuvers</li>
                 <li>
-                    In der Pro Version kannst du einzelne Manöver in der Liste oder Karte antippen und
-                    bekommst grafische Details: Beschleunigungsverläufe, Slope, Geschwindigkeit, Boost usw.
+                    In Pro: graphical details for each maneuver  
+                    (acceleration curves, slope, speed, boost, etc.)
                 </li>
             </ul>
 
             <h3>Settings <span class="badge badge-free">Free</span></h3>
             <p>
-                In den Settings findest du eine Kurzdokumentation, kannst einige Anzeigeoptionen konfigurieren
-                (z. B. Zeitfenster für Charts) und erhältst Hinweise zur Nutzung einzelner Funktionen.
+                Documentation and configuration options (chart windows, display settings, etc.)
             </p>
+
         </div>
     </details>
 
-    <!-- Fahrstil-Tipps -->
+    <!-- Driving Tips -->
     <details class="manual-accordion" id="details-tips">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 18c4-6 12-6 16 0"></path>
-            <path d="M4 6c4 6 12 6 16 0"></path>
+                <path d="M4 18c4-6 12-6 16 0"></path>
+                <path d="M4 6c4 6 12 6 16 0"></path>
             </svg>
-        Fahrstil-Tipps</summary>
+        Driving Tips</summary>
+
         <div class="accordion-content">
-            <h3>🔭 Antizipieren & Planen</h3>
+
+            <h3>🔭 Anticipation & Planning</h3>
             <p>
-                Der wichtigste Unterschied zwischen guten und besseren Autofahrern ist die Fähigkeit,
-                Situationen vorauszusehen und sich anzupassen. Beobachte nicht nur das Auto direkt vor dir, sondern den
-                Verkehr weit voraus. Wenn du früh erkennst, dass du langsamer werden musst, kannst du
-                sanft und gleichmäßig bremsen, statt abrupt reagieren zu müssen.
+                The biggest difference between good and better drivers is anticipation.
+                Look far ahead, not only at the car in front.  
+                Early recognition allows smooth braking instead of abrupt reactions.
             </p>
 
-            <h3>👟 Beschleunigen</h3>
+            <h3>👟 Acceleration</h3>
+            <p>Accelerate only as much as needed — and smoothly.</p>
+
+            <h3>🦶 Braking & ⛔️ Stopping</h3>
             <p>
-                Beschleunige nur so stark, wie wirklich nötig, und möglichst gleichmäßig.
-                Überlege dir vorher, welche Zielgeschwindigkeit sinnvoll ist, und beschleunige sanft dorthin,
-                statt ständig hoch und wieder runter zu beschleunigen.
+                Initiate braking early.  
+                Reduce brake pressure before stopping to minimize the final jerk.
             </p>
 
-            <h3>🦶 Bremsen & ⛔️ Anhalten</h3>
+            <h3>⭕️ Steering</h3>
             <p>
-                Plane Brems- und Stop-Manöver so früh wie möglich. Leite das Bremsen rechtzeitig ein,
-                sodass du mit geringer, konstanter Verzögerung zum Stillstand kommst.
-                Reduziere den Bremsdruck am Ende des Stop-Manövers vorsichtig, um den Stop-Ruckler zu minimieren.
+                Enter turns early and gently.  
+                Avoid unnecessary corrections.  
+                Exit smoothly.
             </p>
 
-            <h3>⭕️ Lenken</h3>
+            <h3>🟰 Constant Speed</h3>
             <p>
-                Leite Kurven früh und sanft ein, halte das Lenkmoment möglichst konstant und vermeide unnötige
-                Korrekturen. Verteile das Lenken über den gesamten Kurvenverlauf und lenke am Ende sanft zurück.
-                So minimierst du Fliehkräfte, Lastwechsel und Reifenabrieb.
+                Keeping a constant speed reduces energy consumption dramatically.  
+                Use cruise control where possible.
             </p>
 
-            <h3>🟰 Konstante Geschwindigkeit</h3>
-            <p>
-                Besonders auf Autobahnen lohnt es sich, die Geschwindigkeit möglichst konstant zu halten.
-                Nutze den Tempomat, wenn es die Situation erlaubt. Jeder unnötige km/h über deiner geplanten
-                Reisegeschwindigkeit kostet überproportional viel Energie, insbesondere bei hohen Geschwindigkeiten.
-            </p>
         </div>
     </details>
 
-    <!-- Technik & Sensorik -->
+    <!-- Technical -->
     <details class="manual-accordion" id="details-technik">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
-            <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+                <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
             </svg>
-        Technik im Detail</summary>
+        Technical Details</summary>
         <div class="accordion-content">
-            <h3>Sensoren & g-Kräfte</h3>
+            <h3>Sensors & g-forces</h3>
             <p>
-                GoSmooth2 nutzt die im iPhone verbauten Beschleunigungssensoren und Gyroskope. Sie messen
-                Kräfte in Relation zur Erdanziehungskraft (g). Werte unter ca. 0,1 g gelten meist als sanft,
-                Manöver über 0,4 g treten normalerweise nur in Gefahrensituationen oder sehr dynamischer
-                Fahrweise auf.
+                GoSmooth2 uses the iPhone’s built-in accelerometer and gyroscope.
+                <br>Values below ~0.1 g are considered smooth.
+                <br>Values above 0.4 g typically indicate emergency or very dynamic driving.
             </p>
 
-            <h3>Drift & Filterung</h3>
+            <h3>Drift & Filtering</h3>
             <p>
-                Bei langen Kurven oder Manövern kann es zu Sensordrift kommen. Dadurch sehen manche Verläufe
-                so aus, als ob das Manöver länger andauert, obwohl die Kurve schon zu Ende ist. GoSmooth2
-                kompensiert diese Effekte so gut wie möglich, damit die Scores nicht verfälscht werden.
+                Long maneuvers can accumulate sensor drift.  
+                GoSmooth2 compensates these effects to keep scoring fair.
             </p>
 
-            <h3>Normalisierte Energiewerte</h3>
+            <h3>Normalized Energy Values</h3>
             <p>
-                Damit Scores unabhängig vom Fahrzeugtyp vergleichbar sind, verwendet GoSmooth2 ein
-                vereinfachtes Modell mit:
+                To ensure comparability across cars, GoSmooth2 uses:
             </p>
             <ul>
-                <li>angenommenem Fahrzeuggewicht (ca. 1.500 kg)</li>
-                <li>typischem Verbrennungsmotor-Wirkungsgrad (~28 %)</li>
+                <li>assumed vehicle mass (~1,500 kg)</li>
+                <li>typical engine efficiency (~28%)</li>
             </ul>
             <p>
-                Die Eco- und Energiewerte sind daher <strong>verhaltensabhängig normalisiert</strong>.
-                Sie zeigen dir, wie dein Fahrstil die Energieeffizienz beeinflusst, nicht den exakten
-                Verbrauch deines konkreten Fahrzeugs.
+                Resulting values are <strong>normalized</strong>  
+                and reflect your driving behavior — not exact fuel consumption.
             </p>
         </div>
     </details>
 
-    <!-- Glossar -->
+    <!-- Glossary -->
     <details class="manual-accordion" id="details-glossar">
         <summary>
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
-            <line x1="4" y1="12" x2="16" y2="12"></line>
-            <circle cx="18" cy="7" r="2"></circle>
+                <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
+                <line x1="4" y1="12" x2="16" y2="12"></line>
+                <circle cx="18" cy="7" r="2"></circle>
             </svg>
-        Glossar</summary>
+        Glossary</summary>
         <div class="accordion-content">
             <ul>
-                <li><strong>Trip</strong> – Zusammenhängende Fahrtstrecke vom Start bis zum Stopp.</li>
-                <li><strong>Manöver</strong> – Ein klar abgegrenzter Fahrabschnitt (Start, Accel, Brake, Stop, Steer).</li>
-                <li><strong>Sub-Manöver</strong> – Unterbrechung oder Teilstück eines Manövers, z. B. Korrekturen.</li>
-                <li><strong>g-Kraft</strong> – Beschleunigung relativ zur Erdanziehungskraft (1 g ≈ 9,81 m/s²).</li>
-                <li><strong>Consistency</strong> – Maß für Gleichmäßigkeit deiner Geschwindigkeit.</li>
-                <li><strong>Safety</strong> – Maß für Geschwindigkeits­einhaltung und geringe Ablenkung.</li>
-                <li><strong>Eco</strong> – Maß für den energieeffizienten Einsatz von Gas und Bremse.</li>
-                <li><strong>Boost</strong> – zusätzliche Score-Punkte für besonders gleichmäßige Manöver (Basic/Pro).</li>
+                <li><strong>Trip</strong> – Continuous route from start to stop.</li>
+                <li><strong>Maneuver</strong> – A distinct driving event (Start, Accel, Brake, Stop, Steer).</li>
+                <li><strong>Sub-maneuver</strong> – An interruption or correction within a maneuver.</li>
+                <li><strong>g-force</strong> – Acceleration relative to Earth’s gravity.</li>
+                <li><strong>Consistency</strong> – Smoothness & stability of speed.</li>
+                <li><strong>Safety</strong> – Adherence to speed limits & low distraction.</li>
+                <li><strong>Eco</strong> – Energy efficiency of acceleration & braking.</li>
+                <li><strong>Boost</strong> – Additional score points for very smooth maneuvers (Basic/Pro).</li>
             </ul>
         </div>
     </details>
@@ -723,9 +687,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
 
 <footer>
-    <a href="imprint.html">Imprint</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html">Contact</a>
+    <a href="imprint_en.html">Imprint</a> |
+    <a href="privacy_en.html">Privacy Policy</a> |
+    <a href="contact_en.html">Contact</a>
 </footer>
 
 </body>
