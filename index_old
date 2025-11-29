@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+
+function spawnSnow() {
+    const flake = document.createElement("div");
+    flake.className = "snowflake";
+    flake.textContent = "❄";
+
+    const field = document.getElementById("snow-field");
+
+    // zufällige horizontale Startposition
+    flake.style.left = Math.random() * 100 + "vw";
+
+    // zufällige Größe
+    const size = 10 + Math.random() * 14;
+    flake.style.fontSize = size + "px";
+
+    // opacity der flakes
+    flake.style.opacity = 1.0;
+    
+    // unterschiedliche Dauer
+    const duration = 6 + Math.random() * 8;
+    flake.style.animationDuration = duration + "s";
+
+    // zufällige leichte seitliche Drift
+    const drift = (Math.random() - 0.5) * 60; // -30 bis +30px
+    flake.style.setProperty('--drift', drift + 'px');
+
+    field.appendChild(flake);
+
+    // entfernen sobald Schneeflocke unten ist
+    setTimeout(() => flake.remove(), duration * 1000);
+}
+
+// 5–10 Schneeflocken pro Sekunde
+setInterval(spawnSnow, 1000);
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+    
+        <div class="lang-switch">
+            <button onclick="setLanguage('de')">DE</button> |
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html" class="active">Solution</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="manual.html">Manual</a></li>
+            <li><a href="pro.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section>
+    <h2 data-i18n="solution.title"></h2>
+    
+    <img
+        src="Good_Driver_!.jpg"
+        alt="Good Driver!"
+        loading="lazy"
+        style="opacity:0.5;"
+    >
+
+    <p>
+        <span data-i18n="solution.AreYou"></span><br>
+        <span data-i18n="solution.OfCourse"></span><br>
+        <span data-i18n="solution.Text1"></span>
+    </p>
+
+    <p data-i18n="solution.Text2"></p>
+
+    <p>
+        <span data-i18n="solution.Text3"></span><br>
+        <span data-i18n="solution.Text4"></span>
+    </p>
+
+    <img
+        src="Good_Driver_Q.jpg"
+        alt="Good Driver?"
+        loading="lazy"
+        style="opacity:0.5;"
+    >
+
+    <p data-i18n="solution.Text5"></p>
+</section>
+
+<footer>
+    <a href="imprint.html">Imprint</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="contact.html">Contact</a>
+</footer>
+
+<!-- <div id="snow-field"></div> -->
+    
+<script>
+const translations = {
+    de: {
+        "solution.title": "Wilkommen bei GoSmooth",
+        "solution.AreYou": "Kannst Du gut autofahren?",
+        "solution.OfCourse": "Natürlich! Aber lass es uns gemeinsam herausfinden.",
+        "solution.Text1": "GoSmooth misst mithilfe der Sensoren deines Mobiltelefons wie gut Du wirklich bist.",
+        "solution.Text2": "Die GPS-Daten und Bewegungssensoren deines iPhones werden kontinuierlich von der GoSmooth-KI analysiert. Jedes Manöver wird bewertet und daraus ein Gesamtscore berechnet – so erhältst du eine neutrale und objektive Einschätzung deiner Fahrleistung.",
+        "solution.Text3": "75 % aller Fahrer halten sich für überdurchschnittlich.",
+        "solution.Text4": "Mit GoSmooth findest du heraus, ob du wirklich gut auto fährst – oder vielleicht sogar besser.",
+        "solution.Text5": "Erfahre im <a href=\"manual.html\">Benutzerhandbuch</a> mehr darüber, was GoSmooth kann und lade die App hier im <a href=\"https://apps.apple.com\">App Store</a> herunter."
+
+    },
+    en: {
+        "solution.title": "Welcome to GoSmooth",
+        "solution.AreYou": "Are you a good driver?",
+        "solution.OfCourse": "Of course you are! But let’s find out together.",
+        "solution.Text1": "Let GoSmooth use your iPhone to measure how good you really are.",
+        "solution.Text2": "The GPS data and motion sensors of your iPhone are continuously analyzed by the GoSmooth AI. Every maneuver is evaluated, and a total score is calculated — giving you a neutral, objective assessment of your driving performance.",
+        "solution.Text3": "75% of all drivers consider themselves above average.",
+        "solution.Text4": "With GoSmooth, you can find out whether you are truly a good driver — or maybe even a better one.",
+        "solution.Text5": "Learn more about what GoSmooth2 can do in the <a href=\"manual.html\">User Manual</a>, and download the app here in the <a href=\"https://apps.apple.com\">App Store</a>."
+
+    }
+};
+</script>
+
+<script>
+function setLanguage(lang) {
+    localStorage.setItem("lang", lang);
+    applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
+
+// Beim Laden automatisch anwenden:
+const savedLang = localStorage.getItem("lang") || "de";
+applyLanguage(savedLang);
+</script>
+
+    
+</body>
+</html>
