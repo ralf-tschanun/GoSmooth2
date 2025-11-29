@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Kontakt – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="index_de.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Language Switch -->
+        <div class="lang-switch-small">
+            <a href="contact_de.html" class="active-lang">DE</a> |
+            <a href="contact.html">EN</a>
+        </div>
+
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index_de.html">Lösung</a></li>
+            <li><a href="about_de.html">Über uns</a></li>
+            <li><a href="manual_de.html">Handbuch</a></li>
+            <li><a href="pro_de.html">Pro</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<section style="text-align:left; max-width:700px;">
+    <h1>Kontakt</h1>
+
+    <p>Wenn du Fragen, Feedback oder Vorschläge hast, kannst du uns gerne über das folgende Formular erreichen.</p>
+
+    <form action="https://formspree.io/f/xzzwnaee" method="POST">
+
+        <label>Dein Name:</label><br>
+        <input type="text" name="name" style="width:100%; padding:8px;" required><br><br>
+
+        <label>Deine E-Mail:</label><br>
+        <input type="email" name="email" style="width:100%; padding:8px;" required><br><br>
+
+        <label>Deine Nachricht:</label><br>
+        <textarea name="message" rows="6" style="width:100%; padding:8px;" required></textarea><br><br>
+
+        <button type="submit" style="padding:10px 20px; font-size:16px;">
+            Nachricht senden
+        </button>
+
+    </form>
+
+    <p style="margin-top:20px; opacity:0.8;">
+        Deine Nachricht wird sicher an unser Team übermittelt.
+    </p>
+</section>
+
+<footer>
+    <a href="imprint_de.html">Impressum</a> |
+    <a href="privacy_de.html">Datenschutz</a> |
+    <a href="contact_de.html" class="active">Kontakt</a>
+</footer>
+
+</body>
+</html>
