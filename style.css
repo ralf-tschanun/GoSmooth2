@@ -398,3 +398,9 @@ footer a:hover {
 .active-lang {
     font-weight: bold;
 }
+
+.appstore-badge {
+  width: 150px;
+  height: auto;
+}
+
