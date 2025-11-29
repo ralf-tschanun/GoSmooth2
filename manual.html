@@ -44,10 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="nav-container">
         <a href="index.html" class="nav-logo">GoSmooth2</a>
 
-        <!-- Hamburger Button -->
-        <div class="nav-hamburger" onclick="toggleMenu()">
-            &#9776;
+        <!-- Language switch -->
+        <div class="lang-switch-small">
+            <a href="index_de.html">DE</a> |
+            <a href="index.html" class="active-lang">EN</a>
         </div>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
 
         <!-- Menu Items -->
         <ul class="nav-menu" id="nav-menu">
@@ -58,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
     </div>
 </nav>
-
 
 <section id="manual">
 
