@@ -379,15 +379,22 @@ footer a:hover {
     }
 }
 
-.lang-switch button {
-    background: none;
-    border: none;
+/* kleiner Sprachschalter oben rechts */
+.lang-switch-small {
+    font-size: 0.8rem;
+    opacity: 0.8;
     color: rgb(255,215,0);
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0 4px;
 }
 
-.lang-switch button:hover {
+.lang-switch-small a {
+    color: rgb(255,215,0);
+    text-decoration: none;
+}
+
+.lang-switch-small a:hover {
     text-decoration: underline;
+}
+
+.active-lang {
+    font-weight: bold;
 }
