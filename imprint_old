@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Imprint – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Solution</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="manual.html">User Manual</a></li>
+            <li><a href="pro.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<section style="text-align:left;">
+    <h1>Imprint</h1>
+    <p>GoSmooth Team.
+         <p>
+    <p>This site is for Testing purposes only.
+    <p>It's operated by Sina Tschanun and Team
+    <p>
+    Alszeile 88/4/2<br>
+    A-1170 Vienna.
+    </p>
+</section>
+
+<footer>
+    <a href="imprint.html" class="active">Imprint</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="contact.html">Contact</a>    
+</footer>
+
+</body>
+</html>
