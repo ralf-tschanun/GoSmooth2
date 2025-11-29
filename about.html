@@ -3,10 +3,10 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>About Us – GoSmooth2</title>
+    <title>About – GoSmooth2</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    
+
 <script>
 function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
@@ -19,12 +19,15 @@ function toggleMenu() {
     <div class="nav-container">
         <a href="index.html" class="nav-logo">GoSmooth2</a>
 
-        <!-- Hamburger Button -->
+        <div class="lang-switch">
+            <button onclick="setLanguage('de')">DE</button> |
+            <button onclick="setLanguage('en')">EN</button>
+        </div>
+
         <div class="nav-hamburger" onclick="toggleMenu()">
             &#9776;
         </div>
 
-        <!-- Menu Items -->
         <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Solution</a></li>
             <li><a href="about.html" class="active">About</a></li>
@@ -34,23 +37,24 @@ function toggleMenu() {
     </div>
 </nav>
 
-
 <section style="text-align:left;">
-    <h1>About Us</h1>
-    <p><strong>GoSmooth2</strong> was developed to make driving safer, smoother, and more intuitive.
-       Our mission is to combine powerful technology with a clean, easy-to-use interface.</p>
 
-    <h2>Our Vision</h2>
-    <p>We believe in smooth digital experiences. GoSmooth2 blends elegant design with intelligent AI —
-       giving drivers a clear view of their real performance.</p>
+    <h1 data-i18n="about.title"></h1>
 
-    <h2>Why GoSmooth?</h2>
+    <p data-i18n="about.intro"></p>
+
+    <h2 data-i18n="about.visionTitle"></h2>
+    <p data-i18n="about.visionText"></p>
+
+    <h2 data-i18n="about.whyTitle"></h2>
+
     <ul>
-        <li>Simple and intuitive</li>
-        <li>Clear and modern UI</li>
-        <li>Reliable and accurate</li>
-        <li>Advanced AI analysis</li>
+        <li data-i18n="about.why1"></li>
+        <li data-i18n="about.why2"></li>
+        <li data-i18n="about.why3"></li>
+        <li data-i18n="about.why4"></li>
     </ul>
+
 </section>
 
 <footer>
@@ -58,6 +62,52 @@ function toggleMenu() {
     <a href="privacy.html">Privacy Policy</a> |
     <a href="contact.html">Contact</a>
 </footer>
+
+<script>
+const translations = {
+    de: {
+        "about.title": "Über uns",
+        "about.intro": "GoSmooth2 wurde entwickelt, um Autofahren sicherer, smoother und intuitiver zu machen. Unsere Mission ist es, leistungsstarke Technologie mit einem klaren, benutzerfreundlichen Design zu verbinden.",
+        "about.visionTitle": "Unsere Vision",
+        "about.visionText": "Wir glauben an smoothe digitale Erlebnisse. GoSmooth2 verbindet elegantes Design mit intelligenter KI – und gibt dir einen klaren Blick auf deine tatsächliche Fahrleistung.",
+        "about.whyTitle": "Warum GoSmooth?",
+        "about.why1": "Einfach und intuitiv",
+        "about.why2": "Klares und modernes UI",
+        "about.why3": "Zuverlässig und präzise",
+        "about.why4": "Fortgeschrittene KI-Analyse"
+    },
+    en: {
+        "about.title": "About Us",
+        "about.intro": "GoSmooth2 was developed to make driving safer, smoother, and more intuitive. Our mission is to combine powerful technology with a clean, easy-to-use interface.",
+        "about.visionTitle": "Our Vision",
+        "about.visionText": "We believe in smooth digital experiences. GoSmooth2 blends elegant design with intelligent AI — giving you a clear view of your real performance.",
+        "about.whyTitle": "Why GoSmooth?",
+        "about.why1": "Simple and intuitive",
+        "about.why2": "Clear and modern UI",
+        "about.why3": "Reliable and accurate",
+        "about.why4": "Advanced AI analysis"
+    }
+};
+</script>
+
+<script>
+function setLanguage(lang) {
+    localStorage.setItem("lang", lang);
+    applyLanguage(lang);
+}
+
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+}
+
+const savedLang = localStorage.getItem("lang") || "de";
+applyLanguage(savedLang);
+</script>
 
 </body>
 </html>
