@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Privacy Policy – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Solution</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="manual.html">Manual</a></li>
+            <li><a href="pro.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<section style="text-align:left;">
+
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: November 2025</em></p>
+
+    <h2>1. Local Data Processing Only</h2>
+    <p>
+        GoSmooth2 processes all data exclusively on your iPhone.
+        No data is transmitted to GoSmooth, to servers, or to third parties.
+        We do not collect any personal data and have no access to anything stored on your device.
+    </p>
+
+    <h2>2. What Data Does GoSmooth2 Use?</h2>
+    <p>To analyze and evaluate your driving behavior, GoSmooth2 uses the following data locally on your device:</p>
+
+    <h3>• GPS Data (Location Data)</h3>
+    <p>Used to determine speed, movement, and driving patterns.</p>
+
+    <h3>• Motion Sensor Data</h3>
+    <p>
+        This includes accelerometer, gyroscope, and related motion inputs.
+        These values help the AI detect and evaluate driving maneuvers.
+    </p>
+
+    <p><strong>All data remains entirely on your iPhone and is never uploaded or shared.</strong></p>
+
+    <h2>3. How Is the Data Used?</h2>
+    <p>
+        All collected data is used solely to:
+    </p>
+    <ul>
+        <li>Analyze your driving maneuvers</li>
+        <li>Evaluate your driving performance</li>
+        <li>Calculate your personal driving score</li>
+    </ul>
+
+    <p>All processing is performed locally by the GoSmooth AI on your device.</p>
+
+    <h2>4. Local Storage</h2>
+    <p>
+        Driving events, raw sensor readings, and your score are stored only on your iPhone.
+        Nothing is transferred outside the device.
+        If you delete the app, all data is permanently removed.
+    </p>
+
+    <h2>5. No User Accounts, No Tracking, No Analytics</h2>
+    <p>GoSmooth2 does not use:</p>
+    <ul>
+        <li>Accounts or login systems</li>
+        <li>Cloud services</li>
+        <li>Tracking frameworks</li>
+        <li>Analytics tools</li>
+        <li>Advertising identifiers</li>
+        <li>Cookies</li>
+    </ul>
+
+    <h2>6. Device Permissions</h2>
+
+    <h3>• Location Access (While Using the App)</h3>
+    <p>Required for GPS-based speed and movement analysis.</p>
+
+    <h3>• Motion & Fitness Access</h3>
+    <p>Required for analyzing acceleration, braking, and steering maneuvers.</p>
+
+    <p>The app cannot function properly without these permissions.  
+       However, the data remains fully local on your device.</p>
+
+    <h2>7. Your Rights (GDPR / DSGVO)</h2>
+    <p>
+        Since we do not collect or store personal data, your GDPR rights technically apply,
+        but there is no external data held by us to act upon.
+    </p>
+
+    <h2>8. Contact</h2>
+    <p>
+        If you have questions about this Privacy Policy, you can contact us at:<br><br>
+        <strong>GoSmooth Support</strong><br>
+        <a href="contact.html">Contact GoSmooth</a>
+    </p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>
+        We may update this Privacy Policy to reflect improvements to the app.
+        Any updates will be published on this page.
+    </p>
+
+</section>
+
+<footer>
+    <a href="imprint.html">Imprint</a> |
+    <a href="privacy.html" class="active">Privacy Policy</a> |
+    <a href="contact.html">Contact</a>
+</footer>
+
+</body>
+</html>
