@@ -17,14 +17,17 @@ function toggleMenu() {
 
 <nav class="navbar">
     <div class="nav-container">
+
         <a href="index.html" class="nav-logo">GoSmooth2</a>
 
-        <!-- Hamburger Button -->
-        <div class="nav-hamburger" onclick="toggleMenu()">
-            &#9776;
+        <!-- Language Switch -->
+        <div class="lang-switch-small">
+            <a href="contact_de.html">DE</a> |
+            <a href="contact.html" class="active-lang">EN</a>
         </div>
 
-        <!-- Menu Items -->
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+
         <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Solution</a></li>
             <li><a href="about.html">About</a></li>
@@ -33,6 +36,7 @@ function toggleMenu() {
         </ul>
     </div>
 </nav>
+
 
 <section style="text-align:left; max-width:700px;">
     <h1>Contact Us</h1>
