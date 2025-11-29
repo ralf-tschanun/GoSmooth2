@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>About Us – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+    
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Hamburger Button -->
+        <div class="nav-hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+
+        <!-- Menu Items -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Solution</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="manual.html">Manual</a></li>
+            <li><a href="pro.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<section style="text-align:left;">
+    <h1>About Us</h1>
+    <p><strong>GoSmooth2</strong> was developed to make driving safer, smoother, and more intuitive.
+       Our mission is to combine powerful technology with a clean, easy-to-use interface.</p>
+
+    <h2>Our Vision</h2>
+    <p>We believe in smooth digital experiences. GoSmooth2 blends elegant design with intelligent AI —
+       giving drivers a clear view of their real performance.</p>
+
+    <h2>Why GoSmooth?</h2>
+    <ul>
+        <li>Simple and intuitive</li>
+        <li>Clear and modern UI</li>
+        <li>Reliable and accurate</li>
+        <li>Advanced AI analysis</li>
+    </ul>
+</section>
+
+<footer>
+    <a href="imprint.html">Imprint</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="contact.html">Contact</a>
+</footer>
+
+</body>
+</html>
