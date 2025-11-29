@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>User Manual – GoSmooth2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+function toggleMenu() {
+    document.getElementById("nav-menu").classList.toggle("show");
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
+            const id = this.getAttribute("href").substring(1);
+            const target = document.getElementById(id);
+
+            if (target && target.tagName.toLowerCase() === "details") {
+                target.setAttribute("open", "open");
+            }
+
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            }, 50);
+        });
+    });
+});
+</script>
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="nav-logo">GoSmooth2</a>
+
+        <!-- Language Switch -->
+        <div class="lang-switch-small">
+            <a href="manual_de.html">DE</a> |
+            <a href="manual_en.html" class="active-lang">EN</a>
+        </div>
+
+        <div class="nav-hamburger" onclick="toggleMenu()">&#9776;</div>
+
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Solution</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="manual_en.html" class="active">Manual</a></li>
+            <li><a href="pro.html">Pro</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section id="manual">
+
+    <h1>GoSmooth2 User Manual</h1>
+    <p>
+        GoSmooth2 helps you drive smoother, safer, and more efficiently — without losing the fun.
+        This manual explains how the app works, how your scores are calculated, and how you can improve them.
+    </p>
+
+    <!-- Versions Card -->
+    <div class="manual-card" id="versionen">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19 12a7 7 0 0 0-.2-1.6l2-1.3-1.2-2.1-2.3.7a7 7 0 0 0-2-2L16 3h-2l-.6 2.7a7 7 0 0 0-2.8 0L10 3H8l.7 2.7a7 7 0 0 0-2 2l-2.3-.7-1.2 2.1 2 1.3A7 7 0 0 0 5 12c0 .6.1 1.1.2 1.6l-2 1.3 1.2 2.1 2.3-.7a7 7 0 0 0 2 2L8 21h2l.6-2.7a7 7 0 0 0 2.8 0L14 21h2l-.7-2.7a7 7 0 0 0 2-2l2.3.7 1.2-2.1-2-1.3A7 7 0 0 0 19 12z"/>
+            </svg>
+            Versions & Features
+        </h2>
+
+        <p>GoSmooth2 is available in three tiers. Some features are visible only in specific versions.</p>
+        <ul>
+            <li>
+                <strong>Free</strong><span class="badge badge-free">Free</span><br>
+                Basic functions, trip recording, total score, simple score overview.
+            </li>
+            <li>
+                <strong>Basic</strong><span class="badge badge-basic">Basic</span><br>
+                Everything from Free <em>plus</em> Steer Chart View and Accel/Brake Chart View.
+            </li>
+            <li>
+                <strong>Pro</strong><span class="badge badge-pro">Pro</span><br>
+                Everything from Basic <em>plus</em> History in Settings, maneuver details view,
+                and graphical maneuver details when selecting maneuvers on the Analytics map.
+            </li>
+        </ul>
+
+        <p class="hint">
+            Features in this manual are marked with <span class="badge badge-free">Free</span>,
+            <span class="badge badge-basic">Basic</span> and <span class="badge badge-pro">Pro</span>.
+        </p>
+    </div>
+
+    <!-- Introduction -->
+    <div class="manual-card" id="intro">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20V4M20 20V4"></path>
+                <path d="M4 8h16M4 12h16M4 16h16"></path>
+            </svg>
+            Introduction
+        </h2>
+
+        <p>
+            GoSmooth2 measures vehicle movement using GPS and the motion sensors built into your iPhone.
+            AI algorithms automatically detect maneuvers and evaluate them based on comfort, safety,
+            and energy efficiency.
+        </p>
+
+        <p>In short: The smoother your maneuvers, the higher your score.</p>
+
+        <p><a href="#details-einleitung">More about how GoSmooth2 works</a></p>
+    </div>
+
+    <!-- Scores Card -->
+    <div class="manual-card" id="scores">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 17a8 8 0 0 1 16 0"></path>
+                <line x1="12" y1="12" x2="15" y2="15"></line>
+                <circle cx="12" cy="12" r="1.5"></circle>
+            </svg>
+            Scores
+        </h2>
+
+        <p>
+            GoSmooth2 calculates several types of scores that together form your <strong>Total Score</strong> per trip.
+        </p>
+
+        <ul>
+            <li><strong>Maneuver Scores</strong>: Start, Accel, Brake, Stop, Steer</li>
+            <li><strong>Category Scores</strong>: Consistency, Safety, Eco</li>
+            <li><strong>Total Score</strong>: weighted average of all scores</li>
+        </ul>
+
+        <p><a href="#details-scores">Scoring Details</a></p>
+    </div>
+
+    <!-- Maneuver Card -->
+    <div class="manual-card" id="maneuver">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 12l5-2"></path>
+                <path d="M12 4v3"></path>
+            </svg>
+            Maneuvers
+        </h2>
+
+        <p>
+            GoSmooth2 recognizes different maneuvers and assigns scores from 0 to 10.
+            In Basic and Pro, additional Boost Points may be awarded.
+        </p>
+
+        <ul>
+            <li>🏁 <strong>Start</strong> – Starting from standstill</li>
+            <li>👟 <strong>Accel</strong> – Acceleration</li>
+            <li>🦶 <strong>Brake</strong> – Braking</li>
+            <li>⛔️ <strong>Stop</strong> – Coming to 0 km/h</li>
+            <li>⭕️ <strong>Steer</strong> – Cornering</li>
+        </ul>
+
+        <p><a href="#details-maneuver">Detailed Maneuver Description</a></p>
+    </div>
+
+    <!-- Category Score Card -->
+    <div class="manual-card" id="categories">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
+            </svg>
+            Category Scores
+        </h2>
+
+        <ul>
+            <li><strong>Consistency</strong> – How evenly you maintain your speed</li>
+            <li><strong>Safety</strong> – Speed limit adherence & phone stability</li>
+            <li><strong>Eco</strong> – How energy-efficient your driving style is</li>
+        </ul>
+
+        <p><a href="#details-categories">Category Details</a></p>
+    </div>
+
+    <!-- Screens Card -->
+    <div class="manual-card" id="screens">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <line x1="10" y1="5" x2="10" y2="19"></line>
+                <line x1="16" y1="5" x2="16" y2="19"></line>
+            </svg>
+            Screens & Menus
+        </h2>
+
+        <ul>
+            <li>
+                <strong>Score</strong> <span class="badge badge-free">Free</span> –
+                Overview of Total Score and trip-specific details.
+            </li>
+            <li>
+                <strong>History</strong> <span class="badge badge-pro">Pro</span> –
+                Chronological list of all maneuvers in a trip.
+            </li>
+            <li>
+                <strong>Analytics</strong>
+                <span class="badge badge-basic">Basic</span>
+                <span class="badge badge-pro">Pro</span> –
+                Map view and graphical analysis of trips.
+            </li>
+            <li>
+                <strong>Settings</strong> <span class="badge badge-free">Free</span> –
+                Documentation and display options.
+            </li>
+        </ul>
+
+        <p><a href="#details-screens">Screen-by-Screen Description</a></p>
+    </div>
+
+    <!-- Driving Tips -->
+    <div class="manual-card" id="tips">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 18c4-6 12-6 16 0"></path>
+                <path d="M4 6c4 6 12 6 16 0"></path>
+            </svg>
+            Driving Tips
+        </h2>
+
+        <p>
+            Better drivers drive smoothly: they plan ahead, avoid abrupt actions, maintain speed,
+            and use throttle and brake with intention.
+        </p>
+
+        <p><a href="#details-tips">View Tips in Detail</a></p>
+    </div>
+
+    <!-- Technology -->
+    <div class="manual-card" id="tech">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+            </svg>
+            Technical Foundations
+        </h2>
+
+        <p>
+            GoSmooth2 uses g-forces, sensor filtering, and AI models to evaluate your driving.
+            The energy and scoring calculations are behavior-based and independent of your vehicle model.
+        </p>
+
+        <p><a href="#details-technik">Technical Details</a></p>
+    </div>
+
+    <!-- Glossary -->
+    <div class="manual-card" id="glossary">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
+                <line x1="4" y1="12" x2="16" y2="12"></line>
+                <circle cx="18" cy="7" r="2"></circle>
+            </svg>
+            Glossary
+        </h2>
+
+        <p>Key terms such as Maneuver, Sub-Maneuver, g-force, Boost, and Consistency are explained here.</p>
+
+        <p><a href="#details-glossar">Open Glossary</a></p>
+    </div>
+
+    <!-- DETAILS (ACCORDIONS) -->
+    <h2 id="details">Details</h2>
+
+    <!-- INTRODUCTION DETAILS -->
+    <details class="manual-accordion" id="details-einleitung">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20V4M20 20V4"></path>
+                <path d="M4 8h16M4 12h16M4 16h16"></path>
+            </svg>
+            Introduction
+        </summary>
+
+        <div class="accordion-content">
+            <h3>What is GoSmooth2?</h3>
+            <p>
+                GoSmooth2 measures vehicle motion using GPS and built-in iPhone sensors.
+                The app detects maneuvers (Start, Accel, Brake, Stop, Steer) and evaluates them.
+                AI models analyze the motion profile and assign the current driving situation.
+            </p>
+
+            <p>
+                Each maneuver receives a <strong>Maneuver Score</strong>, and categories such as
+                Consistency, Safety, and Eco form your <strong>Total Score</strong>.
+            </p>
+
+            <h3>Why smooth driving?</h3>
+            <p>
+                Many drivers believe they are “good drivers”.  
+                Better drivers are those who drive comfortably, safely, and efficiently.
+            </p>
+
+            <ul>
+                <li>anticipate traffic</li>
+                <li>avoid abrupt actions</li>
+                <li>lift the throttle early</li>
+                <li>avoid unnecessary braking forces</li>
+                <li>steer smoothly to avoid weight shifts</li>
+                <li>accelerate and maintain speed steadily</li>
+            </ul>
+
+            <p>
+                A simple indicator: the passenger’s head.  
+                The less it “bobs”, the smoother the drive.
+            </p>
+
+            <h3>Fun vs. Reason</h3>
+            <p>
+                Driving can be fun — acceleration forces, cornering, dynamics.  
+                All fine, as long as you choose the right time and place.
+            </p>
+
+            <p>
+                GoSmooth2 helps you strike a balance between fun and everyday efficiency.
+            </p>
+
+            <h3>Target Audience</h3>
+            <p>GoSmooth2 is for drivers who want to:</p>
+            <ul>
+                <li>understand their driving behavior</li>
+                <li>increase comfort and safety for passengers</li>
+                <li>reduce energy consumption and wear</li>
+                <li>compare skills with friends — smoother, not faster</li>
+            </ul>
+        </div>
+    </details>
+
+    <!-- SCORING DETAILS -->
+    <details class="manual-accordion" id="details-scores">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 17a8 8 0 0 1 16 0"></path>
+                <line x1="12" y1="12" x2="15" y2="15"></line>
+                <circle cx="12" cy="12" r="1.5"></circle>
+            </svg>
+            Scores & Driving Physics
+        </summary>
+
+        <div class="accordion-content">
+            <h3>Basic Evaluation</h3>
+            <p>
+                The smoother your maneuvers, the better the score.  
+                Sudden acceleration or braking creates large forces — uncomfortable and inefficient.
+            </p>
+
+            <h3>Acceleration & Energy</h3>
+            <p>
+                Every acceleration requires energy.  
+                Braking dissipates energy as heat (combustion cars) or partial regeneration (EVs).
+            </p>
+
+            <ul>
+                <li>accelerate only as much as needed</li>
+                <li>initiate braking early and smoothly</li>
+                <li>maintain speed when possible</li>
+            </ul>
+
+            <h3>Smoothness & Sub-Maneuvers</h3>
+            <p>Evaluated by:</p>
+            <ul>
+                <li>number of sub-maneuvers</li>
+                <li>duration</li>
+                <li>changes in g-forces</li>
+            </ul>
+
+            <h3>Steering</h3>
+            <p>
+                Smooth steering means:
+            </p>
+
+            <ul>
+                <li>early, gentle turn-in</li>
+                <li>few corrections</li>
+                <li>steady cornering forces</li>
+            </ul>
+        </div>
+    </details>
+
+    <!-- MANEUVER DETAILS -->
+    <details class="manual-accordion" id="details-maneuver">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 12l5-2"></path>
+                <path d="M12 4v3"></path>
+            </svg>
+            Maneuvers in Detail
+        </summary>
+
+        <div class="accordion-content">
+            <h3>🏁 Start</h3>
+            <p>Evaluated by:</p>
+            <ul>
+                <li>initial acceleration curve</li>
+                <li>smoothness</li>
+                <li>start jerk</li>
+            </ul>
+
+            <h3>👟 Accel & 🦶 Brake</h3>
+            <p>Evaluated by:</p>
+            <ul>
+                <li>average number of events per trip</li>
+                <li>smoothness</li>
+                <li>peak forces</li>
+                <li>sub-maneuvers</li>
+                <li>duration</li>
+            </ul>
+
+            <h3>⛔ Stop</h3>
+            <p>Always ends at 0 km/h. Evaluated by:</p>
+            <ul>
+                <li>smoothness</li>
+                <li>peak braking forces</li>
+                <li>stop jerk</li>
+            </ul>
+
+            <h3>⭕ Steer</h3>
+            <p>Evaluated by:</p>
+            <ul>
+                <li>cornering smoothness</li>
+                <li>corrections</li>
+                <li>duration</li>
+                <li>lateral g-forces</li>
+            </ul>
+        </div>
+    </details>
+
+    <!-- CATEGORY DETAILS -->
+    <details class="manual-accordion" id="details-categories">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
+            </svg>
+            Category Scores in Detail
+        </summary>
+
+        <div class="accordion-content">
+            <h3>📐 Consistency</h3>
+            <p>Measures how steady your speed is.</p>
+
+            <h3>💯 Safety</h3>
+            <p>
+                Based on:
+            </p>
+            <ul>
+                <li>speed limit adherence</li>
+                <li>overspeed amount & duration</li>
+                <li>phone movement</li>
+            </ul>
+
+            <h3>🌱 Eco</h3>
+            <p>Evaluates energy-related behavior:</p>
+            <ul>
+                <li>rolling resistance</li>
+                <li>aerodynamics</li>
+                <li>acceleration energy</li>
+                <li>braking energy</li>
+            </ul>
+        </div>
+    </details>
+
+    <!-- SCREENS -->
+    <details class="manual-accordion" id="details-screens">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <line x1="10" y1="5" x2="10" y2="19"></line>
+                <line x1="16" y1="5" x2="16" y2="19"></line>
+            </svg>
+            Screens & Menus
+        </summary>
+
+        <div class="accordion-content">
+            <h3>Score View</h3>
+            <p>
+                Shows Total Score and trip details.
+            </p>
+
+            <h3>History (Pro)</h3>
+            <p>
+                Shows the chronological list of all maneuvers.
+            </p>
+
+            <h3>Analytics</h3>
+            <ul>
+                <li>trip overview</li>
+                <li>map view</li>
+                <li>maneuver markers</li>
+                <li>graphical Pro features</li>
+            </ul>
+
+            <h3>Settings</h3>
+            <p>Documentation and configuration.</p>
+        </div>
+    </details>
+
+    <!-- DRIVING TIPS -->
+    <details class="manual-accordion" id="details-tips">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 18c4-6 12-6 16 0"></path>
+                <path d="M4 6c4 6 12 6 16 0"></path>
+            </svg>
+            Driving Tips
+        </summary>
+
+        <div class="accordion-content">
+            <h3>🔭 Anticipation</h3>
+            <p>Look far ahead and react early.</p>
+
+            <h3>👟 Acceleration</h3>
+            <p>Smooth, intentional, steady.</p>
+
+            <h3>🦶 Braking & ⛔ Stopping</h3>
+            <p>Brake early and reduce brake pressure gently.</p>
+
+            <h3>⭕ Steering</h3>
+            <p>Steer smoothly, avoid corrections.</p>
+
+            <h3>🟰 Constant Speed</h3>
+            <p>Use cruise control where possible.</p>
+        </div>
+    </details>
+
+    <!-- TECH DETAILS -->
+    <details class="manual-accordion" id="details-technik">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+            </svg>
+            Technical Details
+        </summary>
+
+        <div class="accordion-content">
+            <h3>Sensors & g-Forces</h3>
+            <p>iPhone sensors measure forces relative to gravity.</p>
+
+            <h3>Drift & Filtering</h3>
+            <p>Long maneuvers may produce sensor drift; GoSmooth compensates where possible.</p>
+
+            <h3>Normalized Energy Model</h3>
+            <p>
+                Uses simplified assumptions:
+            </p>
+
+            <ul>
+                <li>~1500 kg vehicle weight</li>
+                <li>~28% engine efficiency</li>
+            </ul>
+
+            <p>
+                Values are <strong>normalized</strong>—for comparing driving styles.
+            </p>
+        </div>
+    </details>
+
+    <!-- GLOSSARY -->
+    <details class="manual-accordion" id="details-glossar">
+        <summary>
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
+                <line x1="4" y1="12" x2="16" y2="12"></line>
+                <circle cx="18" cy="7" r="2"></circle>
+            </svg>
+            Glossary
+        </summary>
+
+        <div class="accordion-content">
+            <ul>
+                <li><strong>Trip</strong> – Continuous drive from start to stop.</li>
+                <li><strong>Maneuver</strong> – A clear driving action.</li>
+                <li><strong>Sub-Maneuver</strong> – Small interruptions or corrections.</li>
+                <li><strong>g-Force</strong> – Acceleration relative to gravity.</li>
+                <li><strong>Consistency</strong> – Evenness of speed.</li>
+                <li><strong>Safety</strong> – Speed compliance and phone stability.</li>
+                <li><strong>Eco</strong> – Energy efficiency.</li>
+                <li><strong>Boost</strong> – Bonus score for very smooth maneuvers.</li>
+            </ul>
+        </div>
+    </details>
+
+</section>
+
+<footer>
+    <a href="imprint.html">Imprint</a> |
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="contact.html">Contact</a>
+</footer>
+
+</body>
+</html>
