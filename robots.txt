@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ralf-tschanun.github.io/GoSmooth2/sitemap.xml
+Sitemap: https://ralf-tschanun.github.io/GoSmooth/sitemap.xml
