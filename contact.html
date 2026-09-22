@@ -38,37 +38,39 @@ function toggleMenu() {
 </nav>
 
 
-<section style="text-align:left; max-width:700px;">
+<section>
     <h1>Contact Us</h1>
-
     <p>If you have any questions, feedback, or suggestions, feel free to send us a message using the form below.</p>
 
-    <form action="https://formspree.io/f/xzzwnaee" method="POST">
+    <div class="manual-card">
+        <form class="contact-form" action="https://formspree.io/f/xzzwnaee" method="POST">
+            <label for="contact-name">Your Name:</label>
+            <input id="contact-name" type="text" name="name" required>
 
-        <label>Your Name:</label><br>
-        <input type="text" name="name" style="width:100%; padding:8px;" required><br><br>
+            <label for="contact-email">Your Email:</label>
+            <input id="contact-email" type="email" name="email" required>
 
-        <label>Your Email:</label><br>
-        <input type="email" name="email" style="width:100%; padding:8px;" required><br><br>
+            <label for="contact-message">Your Message:</label>
+            <textarea id="contact-message" name="message" rows="6" required></textarea>
 
-        <label>Your Message:</label><br>
-        <textarea name="message" rows="6" style="width:100%; padding:8px;" required></textarea><br><br>
+            <button type="submit">Send Message</button>
+        </form>
 
-        <button type="submit" style="padding:10px 20px; font-size:16px;">
-            Send Message
-        </button>
-
-    </form>
-
-    <p style="margin-top:20px; opacity:0.8;">
-        Your message will be securely delivered to our team.
-    </p>
+        <p class="form-note">
+            Your message will be securely delivered to our team.
+        </p>
+    </div>
 </section>
 
 <footer>
-    <a href="imprint.html">Imprint</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html" class="active">Contact</a>
+    <div class="footer-inner">
+        <nav class="footer-links" aria-label="Legal">
+            <a href="imprint.html">Imprint</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 GoSmooth. All rights reserved</p>
+    </div>
 </footer>
 
 </body>

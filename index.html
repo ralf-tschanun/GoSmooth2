@@ -11,34 +11,6 @@
 function toggleMenu() {
     document.getElementById("nav-menu").classList.toggle("show");
 }
-
-// Schneefall
-function spawnSnow() {
-    const flake = document.createElement("div");
-    flake.className = "snowflake";
-    flake.textContent = "❄";
-
-    const field = document.getElementById("snow-field");
-
-    flake.style.left = Math.random() * 100 + "vw";
-
-    const size = 10 + Math.random() * 14;
-    flake.style.fontSize = size + "px";
-
-    flake.style.opacity = 1.0;
-
-    const duration = 6 + Math.random() * 8;
-    flake.style.animationDuration = duration + "s";
-
-    const drift = (Math.random() - 0.5) * 60;
-    flake.style.setProperty('--drift', drift + 'px');
-
-    field.appendChild(flake);
-
-    setTimeout(() => flake.remove(), duration * 1000);
-}
-
-setInterval(spawnSnow, 1000);
 </script>
 
 <body>
@@ -66,51 +38,64 @@ setInterval(spawnSnow, 1000);
     </div>
 </nav>
 
-<section>
+<section class="landing">
 
-    <h2>Welcome to GoSmooth</h2>
+    <div class="landing-hero">
+        <h1>GoSmooth — The Driving App.</h1>
+        <p class="landing-sub">Are you a good driver?</p>
+        <p class="landing-lead">
+            Of course you are! But let’s find out how good you really are.
+            <a href="https://apps.apple.com/at/app/gosmooth2/id6761025603" target="_blank" rel="noopener">GoSmooth</a>
+            uses your iPhone to measure your driving — see your score while you drive,
+            and compare with friends.
+        </p>
+        <img class="landing-shot" src="screenshot-trip.jpg" alt="GoSmooth trip score on iPhone" loading="lazy">
+    </div>
 
-    <img src="Good_Driver_!.jpg" alt="Good Driver!" loading="lazy" style="opacity:0.5;">
+    <div class="manual-card landing-card">
+        <div class="landing-split">
+            <p>
+                The GPS data and motion sensors of your iPhone are continuously analyzed by the GoSmooth AI.
+                Every maneuver is evaluated, and a total score is calculated — giving you a neutral,
+                objective assessment of your driving performance.
+            </p>
+            <img class="landing-shot" src="screenshot-details.jpg" alt="GoSmooth trip details with map and scores" loading="lazy">
+        </div>
+    </div>
 
-    <p>
-        Are you a good driver?<br>
-        Of course you are! But let’s find out together.<br>
-        Let GoSmooth use your iPhone to measure how good you really are.
-    </p>
+    <div class="manual-card landing-card">
+        <div class="landing-split">
+            <p>
+                75% of all drivers consider themselves above average.<br>
+                With GoSmooth, you can find out whether you are truly a good driver — or maybe even a better one.
+            </p>
+            <img class="landing-photo" src="Good_Driver_Q.jpg" alt="Good Driver?" loading="lazy">
+        </div>
+    </div>
 
-    <p>
-        The GPS data and motion sensors of your iPhone are continuously analyzed by the GoSmooth AI.
-        Every maneuver is evaluated, and a total score is calculated — giving you a neutral,
-        objective assessment of your driving performance.
-    </p>
-
-    <p>
-        75% of all drivers consider themselves above average.<br>
-        With GoSmooth, you can find out whether you are truly a good driver — or maybe even a better one.
-    </p>
-
-    <img src="Good_Driver_Q.jpg" alt="Good Driver?" loading="lazy" style="opacity:0.5;">
-
-    <p>
-        Learn more about what GoSmooth can do in the 
-        <a href="manual.html">User Manual</a>,
-        and download the app <a href="https://apps.apple.com/your-app-link">here</a>.
-    </p>
-
-    <a href="https://apps.apple.com/at/app/gosmooth2/id6761025603" target="_blank" rel="noopener">
-          <img class="appstore-badge" src="appstore-badge.svg" alt="Download on the App Store">
-    </a>
+    <div class="manual-card landing-card landing-cta">
+        <p>
+            Learn more about what GoSmooth can do in the 
+            <a href="manual.html">User Manual</a>,
+            and download the app here.
+        </p>
+        <a href="https://apps.apple.com/at/app/gosmooth2/id6761025603" target="_blank" rel="noopener">
+            <img class="appstore-badge" src="appstore-badge.svg" alt="Download on the App Store">
+        </a>
+    </div>
 
 </section>
 
 <footer>
-    <a href="imprint.html">Imprint</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html">Contact</a>
+    <div class="footer-inner">
+        <nav class="footer-links" aria-label="Legal">
+            <a href="imprint.html">Imprint</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 GoSmooth. All rights reserved</p>
+    </div>
 </footer>
-
-<!-- Schneefeld, falls aktiviert -->
-<!-- <div id="snow-field"></div> -->
 
 </body>
 </html>

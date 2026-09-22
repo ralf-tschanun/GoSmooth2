@@ -39,37 +39,39 @@ function toggleMenu() {
 </nav>
 
 
-<section style="text-align:left; max-width:700px;">
+<section>
     <h1>Kontakt</h1>
-
     <p>Wenn du Fragen, Feedback oder Vorschläge hast, kannst du uns gerne über das folgende Formular erreichen.</p>
 
-    <form action="https://formspree.io/f/xzzwnaee" method="POST">
+    <div class="manual-card">
+        <form class="contact-form" action="https://formspree.io/f/xzzwnaee" method="POST">
+            <label for="contact-name">Dein Name:</label>
+            <input id="contact-name" type="text" name="name" required>
 
-        <label>Dein Name:</label><br>
-        <input type="text" name="name" style="width:100%; padding:8px;" required><br><br>
+            <label for="contact-email">Deine E-Mail:</label>
+            <input id="contact-email" type="email" name="email" required>
 
-        <label>Deine E-Mail:</label><br>
-        <input type="email" name="email" style="width:100%; padding:8px;" required><br><br>
+            <label for="contact-message">Deine Nachricht:</label>
+            <textarea id="contact-message" name="message" rows="6" required></textarea>
 
-        <label>Deine Nachricht:</label><br>
-        <textarea name="message" rows="6" style="width:100%; padding:8px;" required></textarea><br><br>
+            <button type="submit">Nachricht senden</button>
+        </form>
 
-        <button type="submit" style="padding:10px 20px; font-size:16px;">
-            Nachricht senden
-        </button>
-
-    </form>
-
-    <p style="margin-top:20px; opacity:0.8;">
-        Deine Nachricht wird sicher an unser Team übermittelt.
-    </p>
+        <p class="form-note">
+            Deine Nachricht wird sicher an unser Team übermittelt.
+        </p>
+    </div>
 </section>
 
 <footer>
-    <a href="imprint_de.html">Impressum</a> |
-    <a href="privacy_de.html">Datenschutz</a> |
-    <a href="contact_de.html" class="active">Kontakt</a>
+    <div class="footer-inner">
+        <nav class="footer-links" aria-label="Legal">
+            <a href="imprint_de.html">Impressum</a>
+            <a href="privacy_de.html">Datenschutz</a>
+            <a href="contact_de.html" class="active">Kontakt</a>
+        </nav>
+        <p class="footer-copy">© 2026 GoSmooth. All rights reserved</p>
+    </div>
 </footer>
 
 </body>

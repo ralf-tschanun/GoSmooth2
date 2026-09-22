@@ -13,27 +13,6 @@ function toggleMenu() {
 }
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener("click", function (e) {
-            const id = this.getAttribute("href").substring(1);
-            const target = document.getElementById(id);
-
-            if (target && target.tagName.toLowerCase() === "details") {
-                target.setAttribute("open", "open");
-            }
-
-            setTimeout(() => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.scrollIntoView({ behavior: "smooth", block: "start" });
-                }
-            }, 50);
-        });
-    });
-});
-</script>
 
 <body>
 
@@ -71,37 +50,31 @@ document.addEventListener("DOMContentLoaded", () => {
         This manual explains step by step how the app works, how your scores are calculated, and how you can improve.
     </p>
 
-    <!-- Versionen & Features Card -->
+    <!-- Plans card -->
     <div class="manual-card" id="versionen">
         <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19 12a7 7 0 0 0-.2-1.6l2-1.3-1.2-2.1-2.3.7a7 7 0 0 0-2-2L16 3h-2l-.6 2.7a7 7 0 0 0-2.8 0L10 3H8l.7 2.7a7 7 0 0 0-2 2l-2.3-.7-1.2 2.1 2 1.3A7 7 0 0 0 5 12c0 .6.1 1.1.2 1.6l-2 1.3 1.2 2.1 2.3-.7a7 7 0 0 0 2 2L8 21h2l.6-2.7a7 7 0 0 0 2.8 0L14 21h2l-.7-2.7a7 7 0 0 0 2-2l2.3.7 1.2-2.1-2-1.3A7 7 0 0 0 19 12z"/>
             </svg>
-        Versions & Features
+        Plans
         </h2>
 
         <p>GoSmooth is available in three versions. Some functions are only visible in the higher tiers.</p>
-        <ul>
-            <li>
-                <strong>Free</strong><span class="badge badge-free">Free</span><br>
-                Basic functionality, trip recording, Total Score, simple score overview.
-            </li>
-            <li>
-                <strong>Basic</strong><span class="badge badge-basic">Basic</span><br>
-                Everything from Free <em>plus</em> Steer Chart View and Accel/Brake Chart View.
-            </li>
-            <li>
-                <strong>Pro</strong><span class="badge badge-pro">Pro</span><br>
-                Everything from Basic <em>plus</em> History in Settings, Maneuver Details View, and detailed
-                maneuver graphics when selecting maneuvers in the map of the Analytics View.
-            </li>
-        </ul>
-        <p class="hint">
-            In the manual, features are tagged with <span class="badge badge-free">Free</span>,
-            <span class="badge badge-basic">Basic</span> and
-            <span class="badge badge-pro">Pro</span>.
-        </p>
+                <div class="plan-grid">
+            <div class="plan">
+                <h3>Free<span class="badge badge-free">Free</span></h3>
+                <p>Basic functionality, trip recording, Total Score, simple score overview.</p>
+            </div>
+            <div class="plan">
+                <h3>Basic<span class="badge badge-basic">Basic</span></h3>
+                <p>Everything from Free <em>plus</em> Steer Chart View and Accel/Brake Chart View.</p>
+            </div>
+            <div class="plan">
+                <h3>Pro<span class="badge badge-pro">Pro</span></h3>
+                <p>Everything from Basic <em>plus</em> History in Settings, Maneuver Details View, and detailed maneuver graphics when selecting maneuvers in the map of the Analytics View.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Introduction Card -->
@@ -122,231 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>
             Simply put: The smoother your maneuvers, the higher your score.
         </p>
-        <p>
-            <a href="#details-einleitung">More about how GoSmooth works</a>
-        </p>
-    </div>
-
-    <!-- Scores Card -->
-    <div class="manual-card" id="scores">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 17a8 8 0 0 1 16 0"></path>
-            <line x1="12" y1="12" x2="15" y2="15"></line>
-            <circle cx="12" cy="12" r="1.5"></circle>
-            </svg>
-        Scores
-        </h2>
-        <p>
-            GoSmooth calculates several types of scores that together form your <strong>Total Score</strong> for each trip.
-        </p>
-        <ul>
-            <li><strong>Maneuver Scores</strong>: Start, Accel, Brake, Stop, Steer</li>
-            <li><strong>Category Scores</strong>: Consistency, Safety, Eco</li>
-            <li><strong>Total Score</strong>: Weighted average of all trip scores</li>
-        </ul>
-        <p>
-            <a href="#details-scores">More about score calculation</a>
-        </p>
-    </div>
-
-    <!-- Maneuver Card -->
-    <div class="manual-card" id="maneuver">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="8"></circle>
-            <path d="M12 12l5-2"></path>
-            <path d="M12 4v3"></path>
-            </svg>
-        Maneuvers
-        </h2>
-        <p>
-            GoSmooth automatically detects different maneuvers and assigns individual scores
-            between 0 and 10. In Basic and Pro, you can receive additional Boost points.
-        </p>
-        <ul>
-            <li>🏁 <strong>Start</strong> – Starting from standstill</li>
-            <li>👟 <strong>Accel</strong> – Accelerating</li>
-            <li>🦶 <strong>Brake</strong> – Braking</li>
-            <li>⛔️ <strong>Stop</strong> – Stopping to 0 km/h</li>
-            <li>⭕️ <strong>Steer</strong> – Steering (left and right turns)</li>
-        </ul>
-        <p>
-            <a href="#details-maneuver">View all maneuver details</a>
-        </p>
-    </div>
-
-    <!-- Category Scores Card -->
-    <div class="manual-card" id="categories">
-       <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
-            </svg>
-        Category Scores
-        </h2>
-        <ul>
-            <li><strong>Consistency</strong> – How evenly you maintain your speed</li>
-            <li><strong>Safety</strong> – How well you obey speed limits & keep your phone steady</li>
-            <li><strong>Eco</strong> – How energy-efficient your driving style is</li>
-        </ul>
-        <p>
-            <a href="#details-categories">More about Consistency, Safety, Eco</a>
-        </p>
-    </div>
-
-    <!-- Screens Card -->
-    <div class="manual-card" id="screens">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-            <line x1="10" y1="5" x2="10" y2="19"></line>
-            <line x1="16" y1="5" x2="16" y2="19"></line>
-            </svg>
-        Screens & Menus
-        </h2>
-        <ul>
-            <li>
-                <strong>Score</strong> <span class="badge badge-free">Free</span> –
-                Overview of your Total Score and trip score details.
-            </li>
-            <li>
-                <strong>History</strong> <span class="badge badge-pro">Pro</span> –
-                Chronological log of all maneuvers in a trip.
-            </li>
-            <li>
-                <strong>Analytics</strong> <span class="badge badge-basic">Basic</span>
-                <span class="badge badge-pro">Pro</span> –
-                Map view and graphical evaluation of trips.
-            </li>
-            <li>
-                <strong>Settings</strong> <span class="badge badge-free">Free</span> –
-                Documentation and customizable display options.
-            </li>
-        </ul>
-        <p>
-            <a href="#details-screens">Screen-by-screen description</a>
-        </p>
-    </div>
-
-    <!-- Driving Tips -->
-    <div class="manual-card" id="tips">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 18c4-6 12-6 16 0"></path>
-            <path d="M4 6c4 6 12 6 16 0"></path>
-            </svg>
-        Driving Tips
-        </h2>
-
-        <p>
-            Better drivers drive smoothly: they plan ahead, avoid abrupt maneuvers,
-            keep speed consistent, and use throttle and brake deliberately.
-        </p>
-        <p>
-            <a href="#details-tips">Show detailed driving tips</a>
-        </p>
-    </div>
-
-    <!-- Technology -->
-    <div class="manual-card" id="tech">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
-            <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
-            </svg>
-        Technical Basics
-        </h2>
-
-        <p>
-            GoSmooth uses g-forces, sensor filtering, and AI models to evaluate your driving behavior.
-            Energy and score calculations are based on behavior, independent of car model.
-        </p>
-        <p>
-            <a href="#details-technik">Technical details & models</a>
-        </p>
-    </div>
-
-    <!-- Glossary -->
-    <div class="manual-card" id="glossary">
-        <h2 class="manual-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
-            <line x1="4" y1="12" x2="16" y2="12"></line>
-            <circle cx="18" cy="7" r="2"></circle>
-            </svg>
-        Glossary
-        </h2>
-        <p>
-            Important terms such as Maneuver, Sub-maneuver, g-force, Boost, or Consistency are briefly explained here.
-        </p>
-        <p>
-            <a href="#details-glossar">Show glossary</a>
-        </p>
-    </div>
-
-    <!-- ===================== DETAILS AS ACCORDION ===================== -->
-
-    <h2 id="details">Details</h2>
-
-    <!-- Terms of Use -->
-<details class="manual-accordion" id="details-terms">
-    <summary>
-        <!-- Warning icon -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l9 18H3L12 3z"></path>
-            <line x1="12" y1="9" x2="12" y2="14"></line>
-            <circle cx="12" cy="18" r="1"></circle>
-        </svg>
-        Terms of Use
-    </summary>
-
-    <div class="accordion-content">
-
-        <h3>Safety Notice & Disclaimer</h3>
-        <p>
-            Before using GoSmooth, please read the following information carefully:
-        </p>
-
-        <h3>Road Safety</h3>
-        <p>
-            The use of this app must never distract you while driving.
-            Never operate the app while the vehicle is in motion.
-        </p>
-
-        <h3>Safe Setup</h3>
-        <p>
-            Mount your smartphone in a way that does not obstruct your view,
-            your concentration, or the safe operation of the vehicle in any way.
-        </p>
-
-        <h3>Personal Responsibility</h3>
-        <p>
-            You are at all times solely responsible for the safe control of your vehicle.
-            GoSmooth is intended only to analyze and support your driving style and
-            does not replace careful, attentive, and lawful driving behavior.
-        </p>
-
-        <h3>Disclaimer of Liability</h3>
-        <p>
-            Use of the app is at your own risk.
-            GoSmooth and its developers assume no liability for damages, accidents,
-            or any consequences that may arise directly or indirectly from the use
-            of the app, distraction, or improper usage.
-        </p>
-
-    </div>
-</details>
-
-    <!-- Introduction -->
-    <details class="manual-accordion" id="details-einleitung">
-        <summary>
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 20V4M20 20V4"></path>
-            <path d="M4 8h16M4 12h16M4 16h16"></path>
-            </svg>
-        Introduction</summary>
-        <div class="accordion-content">
-            <h3>What is GoSmooth?</h3>
+        <details class="manual-more">
+            <summary>More about how GoSmooth works</summary>
+            <div class="accordion-content">
+<h3>What is GoSmooth?</h3>
             <p>
                 GoSmooth analyzes vehicle motion using GPS and the built-in motion sensors of your iPhone.
                 The app detects maneuvers (Start, Accel, Brake, Stop, Steer) based on measured accelerations
@@ -382,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 That’s perfectly fine as long as it fits the situation.
             </p>
             <p>
-                Find a balance between <a href="#details-miscellanious">fun</a> and responsible driving.  
+                Find a balance between <a href="#fun-driving">fun</a> and responsible driving.  
                 Save dynamic driving for the right places.  
                 In everyday situations, smooth driving is safer and more relaxed.  
                 GoSmooth helps you become more consistent and aware of your driving style.
@@ -401,20 +153,42 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>
                 Requirements: an iPhone with current iOS, GPS reception, and the GoSmooth app.
             </p>
-        </div>
-    </details>
 
-    <!-- Scores & Physics -->
-    <details class="manual-accordion" id="details-scores">
-        <summary>
+<h3 id="fun-driving">Fun driving</h3>
+            <p>
+                If you ever feel like having some fun behind the wheel and really want to enjoy the acceleration forces, make sure you choose the right road for it!
+                Be sure not to endanger or obstruct anyone. But keep in mind: even when driving fast, the same principle applies — maneuvers are smoother, safer,
+                and more predictable when they are executed smoothly. Especially when maneuvers follow each other quickly, it’s important to handle so-called load changes
+                smoothly — not abruptly. A load change occurs when acceleration forces suddenly shift direction, for example when transitioning from a left turn into
+                a right turn. Abrupt load changes can quickly lead to a switch from static friction to sliding friction, making the car unstable and harder to control.
+                So smooth driving is especially important during sporty or dynamic driving!
+            </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- Scores Card -->
+    <div class="manual-card" id="scores">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 17a8 8 0 0 1 16 0"></path>
             <line x1="12" y1="12" x2="15" y2="15"></line>
             <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
-        Scores & Driving Physics</summary>
-        <div class="accordion-content">
-            <h3>Basic scoring principles</h3>
+        Scores
+        </h2>
+        <p>
+            GoSmooth calculates several types of scores that together form your <strong>Total Score</strong> for each trip.
+        </p>
+        <ul>
+            <li><strong>Maneuver Scores</strong>: Start, Accel, Brake, Stop, Steer</li>
+            <li><strong>Category Scores</strong>: Consistency, Safety, Eco</li>
+            <li><strong>Total Score</strong>: Weighted average of all trip scores</li>
+        </ul>
+        <details class="manual-more">
+            <summary>More about score calculation</summary>
+            <div class="accordion-content">
+<h3>Basic scoring principles</h3>
             <p>
                 Scoring is mainly based on how smooth your maneuvers are.
                 Smooth means that acceleration forces are as low and consistent as possible.
@@ -471,21 +245,35 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>
                 Unnecessary corrections increase forces, tire wear, and reduce stability.
             </p>
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
 
-    <!-- Maneuvers Detail -->
-    <details class="manual-accordion" id="details-maneuver">
-        <summary>
+    <!-- Maneuver Card -->
+    <div class="manual-card" id="maneuver">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="8"></circle>
-                <path d="M12 12l5-2"></path>
-                <path d="M12 4v3"></path>
+            <circle cx="12" cy="12" r="8"></circle>
+            <path d="M12 12l5-2"></path>
+            <path d="M12 4v3"></path>
             </svg>
-        Maneuvers in Detail</summary>
-        <div class="accordion-content">
-
-            <h3>🏁 Start Maneuver</h3>
+        Maneuvers
+        </h2>
+        <p>
+            GoSmooth automatically detects different maneuvers and assigns individual scores
+            between 0 and 10. In Basic and Pro, you can receive additional Boost points.
+        </p>
+        <ul>
+            <li>🏁 <strong>Start</strong> – Starting from standstill</li>
+            <li>👟 <strong>Accel</strong> – Accelerating</li>
+            <li>🦶 <strong>Brake</strong> – Braking</li>
+            <li>⛔️ <strong>Stop</strong> – Stopping to 0 km/h</li>
+            <li>⭕️ <strong>Steer</strong> – Steering (left and right turns)</li>
+        </ul>
+        <details class="manual-more">
+            <summary>View all maneuver details</summary>
+            <div class="accordion-content">
+<h3>🏁 Start Maneuver</h3>
             <p>The start maneuver describes moving from standstill. Evaluated factors:</p>
             <ul>
                 <li>acceleration pattern (max force & shape)</li>
@@ -537,20 +325,27 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>
                 The smoother & longer you hold a constant steering angle, the higher the score.
             </p>
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
 
-    <!-- Category Scores -->
-    <details class="manual-accordion" id="details-categories">
-        <summary>
+    <!-- Category Scores Card -->
+    <div class="manual-card" id="categories">
+       <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
+            <path d="M6 16v-4M12 16v-8M18 16v-2"></path>
             </svg>
-        Category Scores in Detail</summary>
-
-        <div class="accordion-content">
-
-            <h3>📐 Consistency</h3>
+        Category Scores
+        </h2>
+        <ul>
+            <li><strong>Consistency</strong> – How evenly you maintain your speed</li>
+            <li><strong>Safety</strong> – How well you obey speed limits & keep your phone steady</li>
+            <li><strong>Eco</strong> – How energy-efficient your driving style is</li>
+        </ul>
+        <details class="manual-more">
+            <summary>More about Consistency, Safety, Eco</summary>
+            <div class="accordion-content">
+<h3>📐 Consistency</h3>
             <p>
                 Consistency evaluates how evenly you maintain speed.
             </p>
@@ -588,22 +383,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 GoSmooth uses a standardized physics model (car weight 1,500 kg, 28% engine efficiency, etc.)  
                 to allow fair comparisons independent of your car.
             </p>
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
 
-    <!-- Screens -->
-    <details class="manual-accordion" id="details-screens">
-        <summary>
+    <!-- Screens Card -->
+    <div class="manual-card" id="screens">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-                <line x1="10" y1="5" x2="10" y2="19"></line>
-                <line x1="16" y1="5" x2="16" y2="19"></line>
+            <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            <line x1="10" y1="5" x2="10" y2="19"></line>
+            <line x1="16" y1="5" x2="16" y2="19"></line>
             </svg>
-        Screens & Menus</summary>
-
-        <div class="accordion-content">
-
-            <h3>Score View <span class="badge badge-free">Free</span></h3>
+        Screens & Menus
+        </h2>
+        <ul>
+            <li>
+                <strong>Score</strong> <span class="badge badge-free">Free</span> –
+                Overview of your Total Score and trip score details.
+            </li>
+            <li>
+                <strong>History</strong> <span class="badge badge-pro">Pro</span> –
+                Chronological log of all maneuvers in a trip.
+            </li>
+            <li>
+                <strong>Analytics</strong> <span class="badge badge-basic">Basic</span>
+                <span class="badge badge-pro">Pro</span> –
+                Map view and graphical evaluation of trips.
+            </li>
+            <li>
+                <strong>Settings</strong> <span class="badge badge-free">Free</span> –
+                Documentation and customizable display options.
+            </li>
+        </ul>
+        <details class="manual-more">
+            <summary>Screen-by-screen description</summary>
+            <div class="accordion-content">
+<h3>Score View <span class="badge badge-free">Free</span></h3>
             <p>
                 Shows your Total Score and detailed trip results.  
                 Tapping a trip opens detailed view.
@@ -632,22 +448,28 @@ document.addEventListener("DOMContentLoaded", () => {
             <p>
                 Documentation and configuration options (chart windows, display settings, etc.)
             </p>
-
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
 
     <!-- Driving Tips -->
-    <details class="manual-accordion" id="details-tips">
-        <summary>
+    <div class="manual-card" id="tips">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 18c4-6 12-6 16 0"></path>
-                <path d="M4 6c4 6 12 6 16 0"></path>
+            <path d="M4 18c4-6 12-6 16 0"></path>
+            <path d="M4 6c4 6 12 6 16 0"></path>
             </svg>
-        Driving Tips</summary>
+        Driving Tips
+        </h2>
 
-        <div class="accordion-content">
-
-            <h3>🔭 Anticipation & Planning</h3>
+        <p>
+            Better drivers drive smoothly: they plan ahead, avoid abrupt maneuvers,
+            keep speed consistent, and use throttle and brake deliberately.
+        </p>
+        <details class="manual-more">
+            <summary>Show detailed driving tips</summary>
+            <div class="accordion-content">
+<h3>🔭 Anticipation & Planning</h3>
             <p>
                 The biggest difference between good and better drivers is anticipation.
                 Look far ahead, not only at the car in front.  
@@ -675,20 +497,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 Keeping a constant speed reduces energy consumption dramatically.  
                 Use cruise control where possible.
             </p>
+            </div>
+        </details>
+    </div>
 
-        </div>
-    </details>
-
-    <!-- Technical -->
-    <details class="manual-accordion" id="details-technik">
-        <summary>
+    <!-- Technology -->
+    <div class="manual-card" id="tech">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="8" y="8" width="8" height="8" rx="1"></rect>
-                <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+            <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+            <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
             </svg>
-        Technical Details</summary>
-        <div class="accordion-content">
-            <h3>Sensors & g-forces</h3>
+        Technical Basics
+        </h2>
+
+        <p>
+            GoSmooth uses g-forces, sensor filtering, and AI models to evaluate your driving behavior.
+            Energy and score calculations are based on behavior, independent of car model.
+        </p>
+        <details class="manual-more">
+            <summary>Technical details & models</summary>
+            <div class="accordion-content">
+<h3>Sensors & g-forces</h3>
             <p>
                 GoSmooth uses the iPhone’s built-in accelerometer and gyroscope.
                 <br>Values below ~0.1 g are considered smooth.
@@ -713,43 +543,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 Resulting values are <strong>normalized</strong>  
                 and reflect your driving behavior — not exact fuel consumption.
             </p>
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
 
-    <!-- Miscellanious -->
-    <details class="manual-accordion" id="details-miscellanious">
-        <summary>
-            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)"
-             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="5" cy="12" r="1"></circle>
-            <circle cx="12" cy="12" r="1"></circle>
-            <circle cx="19" cy="12" r="1"></circle>
-        </svg>
-        Miscellanious</summary>
-        <div class="accordion-content">
-            <h3>Fun driving</h3>
-            <p>
-                If you ever feel like having some fun behind the wheel and really want to enjoy the acceleration forces, make sure you choose the right road for it!
-                Be sure not to endanger or obstruct anyone. But keep in mind: even when driving fast, the same principle applies — maneuvers are smoother, safer,
-                and more predictable when they are executed smoothly. Especially when maneuvers follow each other quickly, it’s important to handle so-called load changes
-                smoothly — not abruptly. A load change occurs when acceleration forces suddenly shift direction, for example when transitioning from a left turn into
-                a right turn. Abrupt load changes can quickly lead to a switch from static friction to sliding friction, making the car unstable and harder to control.
-                So smooth driving is especially important during sporty or dynamic driving!
-            </p>
-        </div>
-    </details>
-    
     <!-- Glossary -->
-    <details class="manual-accordion" id="details-glossar">
-        <summary>
+    <div class="manual-card" id="glossary">
+        <h2 class="manual-title">
             <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
-                <line x1="4" y1="12" x2="16" y2="12"></line>
-                <circle cx="18" cy="7" r="2"></circle>
+            <path d="M4 5h9a3 3 0 0 1 3 3v11H4z"></path>
+            <line x1="4" y1="12" x2="16" y2="12"></line>
+            <circle cx="18" cy="7" r="2"></circle>
             </svg>
-        Glossary</summary>
-        <div class="accordion-content">
-            <ul>
+        Glossary
+        </h2>
+        <p>
+            Important terms such as Maneuver, Sub-maneuver, g-force, Boost, or Consistency are briefly explained here.
+        </p>
+        <details class="manual-more">
+            <summary>Show glossary</summary>
+            <div class="accordion-content">
+<ul>
                 <li><strong>Trip</strong> – Continuous route from start to stop.</li>
                 <li><strong>Maneuver</strong> – A distinct driving event (Start, Accel, Brake, Stop, Steer).</li>
                 <li><strong>Sub-maneuver</strong> – An interruption or correction within a maneuver.</li>
@@ -759,15 +573,68 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><strong>Eco</strong> – Energy efficiency of acceleration & braking.</li>
                 <li><strong>Boost</strong> – Additional score points for very smooth maneuvers (Basic/Pro).</li>
             </ul>
-        </div>
-    </details>
+            </div>
+        </details>
+    </div>
+
+    <div class="manual-card" id="terms">
+        <h2 class="manual-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="rgb(255,165,0)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l9 18H3L12 3z"></path>
+            <line x1="12" y1="9" x2="12" y2="14"></line>
+            <circle cx="12" cy="18" r="1"></circle>
+            </svg>
+        Terms of Use
+        </h2>
+        <details class="manual-more">
+            <summary>Safety notice and disclaimer</summary>
+            <div class="accordion-content">
+<h3>Safety Notice & Disclaimer</h3>
+        <p>
+            Before using GoSmooth, please read the following information carefully:
+        </p>
+
+        <h3>Road Safety</h3>
+        <p>
+            The use of this app must never distract you while driving.
+            Never operate the app while the vehicle is in motion.
+        </p>
+
+        <h3>Safe Setup</h3>
+        <p>
+            Mount your smartphone in a way that does not obstruct your view,
+            your concentration, or the safe operation of the vehicle in any way.
+        </p>
+
+        <h3>Personal Responsibility</h3>
+        <p>
+            You are at all times solely responsible for the safe control of your vehicle.
+            GoSmooth is intended only to analyze and support your driving style and
+            does not replace careful, attentive, and lawful driving behavior.
+        </p>
+
+        <h3>Disclaimer of Liability</h3>
+        <p>
+            Use of the app is at your own risk.
+            GoSmooth and its developers assume no liability for damages, accidents,
+            or any consequences that may arise directly or indirectly from the use
+            of the app, distraction, or improper usage.
+        </p>
+            </div>
+        </details>
+    </div>
 
 </section>
 
 <footer>
-    <a href="imprint.html">Imprint</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="contact.html">Contact</a>
+    <div class="footer-inner">
+        <nav class="footer-links" aria-label="Legal">
+            <a href="imprint.html">Imprint</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <p class="footer-copy">© 2026 GoSmooth. All rights reserved</p>
+    </div>
 </footer>
 
 </body>
