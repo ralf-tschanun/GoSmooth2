@@ -1,16 +1,16 @@
 /* ============================================================
    GLOBAL
-   Palette: text #e8b80e, background #080f5d, primary #ccae25,
+   Palette: text/heading/primary #e8b80e, background #080f5d,
    secondary #723e24 (small accent only), accent #e6831a.
    Mobile first. Desktop rules live in min-width queries.
    ============================================================ */
 
 :root {
     --text: #e8b80e;
-    --heading: #f3d56b;
+    --heading: #e8b80e;
     --bg: #080f5d;
     --bg-bottom: #05082e;
-    --primary: #ccae25;
+    --primary: #e8b80e;
     --secondary: #723e24;
     --accent: #e6831a;
     --surface: rgba(255, 255, 255, 0.07);
